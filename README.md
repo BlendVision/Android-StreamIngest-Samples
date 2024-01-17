@@ -13,7 +13,6 @@ The streamingest SDK is a streaming solution based on the RTMP protocol.
 
 There are multiple ways to integrate an AAR file into your Android project. Below are the methods,
 including a simplified approach using `implementation fileTree`.  
-To ensure you have the most recent features and updates, download the latest version of the AAR files from the BlendVision Android Player SDK repository.
 
 - `streamingest-core.aar`
 - `streamingest.aar`
@@ -38,23 +37,36 @@ To ensure you have the most recent features and updates, download the latest ver
 
 ### 1. Add configChanges tag in your AndroidManifest.xml to prevent the activity from being recreated during screen orientation changes.
 ```xml
+<activity
+android:name=".MainActivity"
+    android:configChanges="keyboardHidden|orientation|screenSize" // add configChanges tag
+    android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-<activity android:name=".MainActivity" android:configChanges="keyboardHidden|orientation|screenSize" // add configChanges tagandroid:exported="true"><intent-filter>
-<action android:name="android.intent.action.MAIN" />
-
-<category android:name="android.intent.category.LAUNCHER" />
-</intent-filter></activity>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+</activity>
 ```
 
 ### 2. Integrate StreamingestView in Your Layout
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-   <com.blendvision.stream.ingest.ui.view.StreamIngestView android:id="@+id/stream_ingest_view" android:layout_width="match_parent" android:layout_height="wrap_content"
-           app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <com.blendvision.stream.ingest.ui.view.StreamIngestView
+        android:id="@+id/stream_ingest_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
@@ -63,59 +75,40 @@ To ensure you have the most recent features and updates, download the latest ver
 
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
-   super.onCreate(savedInstanceState)
+    super.onCreate(savedInstanceState)
 
-   initListener()
+    initListener()
 
-   streamIngestView.connect("YOUR_RTMP_URL")
+    streamIngestView.connect("YOUR_RTMP_URL")
 
 }
 private fun initListener() {
-   streamIngestView.streamStatus.collect { state ->
-      when (state) {
-         State.CONNECT_SUCCESS -> streamIngestView.startPublish("YOUR_STREAM_NAME")
-         State.PUBLISH_START -> // start publish
-         else -> Unit
-      }
-   }
+    streamIngestView.streamStatus.collect { state ->
+        when (state) {
+            State.CONNECT_SUCCESS -> streamIngestView.startPublish("YOUR_STREAM_NAME")
+            State.PUBLISH_START -> // start publish
+            else -> Unit
+        }
+    }
 }
 ```
+
 
 ### 4. please ensure to release the streamingest view to prevent memory leaks When the current page is destroyed.
-
 ```kotlin
 override fun onStop() {
-   super.onStop()
-   streamIngestView.stopPublish()
+    super.onStop()
+    streamIngestView.stopPublish()
 }
 ```
-
 ```kotlin
 override fun onDestroy() {
-   super.onDestroy()
-   streamIngestView.release()
-}
-```
-
-### 4. please ensure to release the streamingest view to prevent memory leaks When the current page is destroyed.
-
-```kotlin
-override fun onStop() {
-   super.onStop()
-   streamIngestView.stopPublish()
-}
-```
-
-```kotlin
-override fun onDestroy() {
-   super.onDestroy()
-   streamIngestView.release()
-   >>>>>>> main
+    super.onDestroy()
+    streamIngestView.release()
 }
 ```
 
 ## Others StreamIngestView API
-
 ```kotlin
 //Sets the quality of the streaming video.
 //StreamQuality.Low()、StreamQuality.Medium()、StreamQuality.High()
@@ -142,7 +135,8 @@ streamIngestPresenter.startPublish(streamName)
 
 //Stops the ongoing stream publishing.
 streamIngestPresenter.stopPublish()
-
+  
 //Releases resources associated with the stream.
 streamIngestPresenter.release()
+             
 ```
