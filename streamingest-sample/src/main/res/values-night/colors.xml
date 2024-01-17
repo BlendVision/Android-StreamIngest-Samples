@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Night mode (Dark theme) colors.xml -->
+<resources>
+
+    <!-- Primary color (dark theme) -->
+    <color name="md_theme_primary">#7CA8F5</color>
+    <color name="md_theme_onPrimary">#000000</color>
+    <color name="md_theme_primaryContainer">#004BA0</color>
+    <color name="md_theme_onPrimaryContainer">#D0E2FF</color>
+
+    <!-- Secondary color (dark theme) -->
+    <color name="md_theme_secondary">#FED97B</color>
+    <color name="md_theme_onSecondary">#000000</color>
+    <color name="md_theme_secondaryContainer">#FFD54F</color>
+    <color name="md_theme_onSecondaryContainer">#FFF3E0</color>
+
+    <!-- Tertiary color (dark theme) -->
+    <color name="md_theme_tertiary">#AECBFA</color>
+    <color name="md_theme_onTertiary">#000000</color>
+    <color name="md_theme_tertiaryContainer">#3172C6</color>
+    <color name="md_theme_onTertiaryContainer">#E3F2FD</color>
+
+    <!-- Error color (dark theme) -->
+    <color name="md_theme_error">#CF6679</color>
+    <color name="md_theme_onError">#000000</color>
+    <color name="md_theme_errorContainer">#B00020</color>
+    <color name="md_theme_onErrorContainer">#FFFFFF</color>
+
+    <!-- Background and Surface colors (dark theme) -->
+    <color name="md_theme_background">#121212</color>
+    <color name="md_theme_onBackground">#FFFFFF</color>
+    <color name="md_theme_surface">#121212</color>
+    <color name="md_theme_onSurface">#FFFFFF</color>
+    <color name="md_theme_surfaceVariant">#1F1B24</color>
+    <color name="md_theme_onSurfaceVariant">#E0E0E0</color>
+
+    <!-- Other colors -->
+    <color name="md_theme_outline">#929292</color>
+    <color name="md_theme_scrim">#99000000
+    </color> <!-- Assuming a darker semi-transparent black for overlay scrim -->
+    <color name="md_theme_shadow">#99000000
+    </color> <!-- Assuming a darker semi-transparent black for shadow -->
+
+    <!-- Component colors (dark theme) -->
+    <color name="btn_bg_enabled">#7CA8F5</color> <!-- 淺藍色系用於啟用的按鈕背景 -->
+    <color name="btn_bg_disabled">#98B4D4</color> <!-- 更淺藍色系用於禁用的按鈕背景 -->
+    <color name="switch_track_active_color">#AECBFA</color> <!-- 淺亮藍色系用於活動開關軌道 -->
+    <color name="switch_track_inactive_color">#CDD9ED</color> <!-- 更淺藍色系用於非活動開關軌道 -->
+    <color name="switch_thumb_active_color">#7CA8F5</color> <!-- 淺藍色系用於活動開關拇指 -->
+    <color name="switch_thumb_inactive_color">#98B4D4</color> <!-- 更淺藍色系用於非活動開關拇指 -->
+
+
+</resources>
+
