@@ -37,7 +37,6 @@ To ensure you have the most recent features and updates, download the latest ver
 ## Usage
 
 ### 1. Add configChanges tag in your AndroidManifest.xml to prevent the activity from being recreated during screen orientation changes.
-
 ```xml
 
 <activity android:name=".MainActivity" android:configChanges="keyboardHidden|orientation|screenSize" // add configChanges tagandroid:exported="true"><intent-filter>
@@ -98,6 +97,23 @@ override fun onDestroy() {
 }
 ```
 
+### 4. please ensure to release the streamingest view to prevent memory leaks When the current page is destroyed.
+
+```kotlin
+override fun onStop() {
+   super.onStop()
+   streamIngestView.stopPublish()
+}
+```
+
+```kotlin
+override fun onDestroy() {
+   super.onDestroy()
+   streamIngestView.release()
+   >>>>>>> main
+}
+```
+
 ## Others StreamIngestView API
 
 ```kotlin
@@ -129,5 +145,4 @@ streamIngestPresenter.stopPublish()
 
 //Releases resources associated with the stream.
 streamIngestPresenter.release()
-
 ```
