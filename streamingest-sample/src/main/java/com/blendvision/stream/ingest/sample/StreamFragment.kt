@@ -59,9 +59,6 @@ class StreamFragment : Fragment() {
     }
 
     private fun setOnClickListener() {
-        binding.settingsButton.setOnClickListener {
-
-        }
         binding.cameraButton.setOnClickListener {
             binding.streamIngestView.switchCamera()
         }
@@ -75,9 +72,14 @@ class StreamFragment : Fragment() {
         }
         binding.playOrPauseButton.setOnClickListener { view ->
             view.isActivated = !view.isActivated
-            rtmpUrl?.let {
-                binding.streamIngestView.connect(it)
+            if (view.isActivated) {
+                rtmpUrl?.let {
+                    binding.streamIngestView.connect(it)
+                }
+            } else {
+                binding.streamIngestView.stopPublish()
             }
+
         }
     }
 
@@ -99,7 +101,7 @@ class StreamFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        binding.streamIngestView.release()
+        binding.streamIngestView.dispose()
         _binding = null
     }
 
