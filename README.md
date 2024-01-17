@@ -12,7 +12,7 @@ The streamingest SDK is a streaming solution based on the RTMP protocol.
 ## Importing AAR into Project
 
 There are multiple ways to integrate an AAR file into your Android project. Below are the methods,
-including a simplified approach using `implementation fileTree`.  
+including a simplified approach using `implementation fileTree`.
 
 - `streamingest-core.aar`
 - `streamingest.aar`
@@ -52,23 +52,14 @@ android:name=".MainActivity"
 ### 2. Integrate StreamingestView in Your Layout
 
 ```xml
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <com.blendvision.stream.ingest.ui.view.StreamIngestView
-        android:id="@+id/stream_ingest_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+<com.blendvision.stream.ingest.ui.view.StreamIngestView
+   android:id="@+id/stream_ingest_view"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   app:layout_constraintBottom_toBottomOf="parent"
+   app:layout_constraintEnd_toEndOf="parent"
+   app:layout_constraintStart_toStartOf="parent"
+   app:layout_constraintTop_toTopOf="parent" />
 ```
 
 ### 3. Listen to the stream state and connect to the RTMP server.
@@ -86,7 +77,7 @@ private fun initListener() {
     streamIngestView.streamStatus.collect { state ->
         when (state) {
             State.CONNECT_SUCCESS -> streamIngestView.startPublish("YOUR_STREAM_NAME")
-            State.PUBLISH_START -> // start publish
+            State.PUBLISH_START -> {}// start publish
             else -> Unit
         }
     }
@@ -104,7 +95,7 @@ override fun onStop() {
 ```kotlin
 override fun onDestroy() {
     super.onDestroy()
-    streamIngestView.release()
+    streamIngestView.dispose()
 }
 ```
 
@@ -112,31 +103,31 @@ override fun onDestroy() {
 ```kotlin
 //Sets the quality of the streaming video.
 //StreamQuality.Low()、StreamQuality.Medium()、StreamQuality.High()
-streamIngestPresenter.setStreamQuality(StreamQuality.Medium())
+streamIngestView.setStreamQuality(StreamQuality.Medium())
 
 //Switches an using camera front or back.
-streamIngestPresenter.switchCamera()
+streamIngestView.switchCamera()
 
 //Mutes or unmutes the video stream.
 //isMute true to mute, false to unmute.
-streamIngestPresenter.mutedVideo(isMute)
+streamIngestView.mutedVideo(isMute)
 
 //Mutes or unmutes the audio stream.
 //isMute true to mute, false to unmute.
-streamIngestPresenter.mutedAudio(isMute)
+streamIngestView.mutedAudio(isMute)
 
 //Connects to the specified RTMP URL.
 //rtmpUrl The RTMP URL to connect to.
-streamIngestPresenter.connect(rtmpUrl)
+streamIngestView.connect(rtmpUrl)
 
 //Publish of the stream with the given stream name.
 //streamName The name of the stream to be published.
-streamIngestPresenter.startPublish(streamName)
+streamIngestView.startPublish(streamName)
 
 //Stops the ongoing stream publishing.
-streamIngestPresenter.stopPublish()
-  
+streamIngestView.stopPublish()
+
 //Releases resources associated with the stream.
-streamIngestPresenter.release()
-             
+streamIngestView.dispose()
+
 ```
