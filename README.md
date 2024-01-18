@@ -1,4 +1,4 @@
-# Android-Streamingest-SDK
+# android-bv-streamingest
 
 The streamingest SDK is a streaming solution based on the RTMP protocol.
 
@@ -35,7 +35,8 @@ including a simplified approach using `implementation fileTree`.
 
 ## Usage
 
-### 1. Add configChanges tag in your AndroidManifest.xml to prevent the activity from being recreated during screen orientation changes.
+### 1. Setup
+Add `configChanges` tag in your `AndroidManifest.xml` to prevent the activity from being recreated during screen orientation changes.
 ```xml
 <activity
 android:name=".MainActivity"
@@ -49,8 +50,8 @@ android:name=".MainActivity"
 </activity>
 ```
 
-### 2. Integrate StreamingestView in Your Layout
-
+### 2. Integrate `StreamingestView` in Your Layout
+This view provides a preview rendering from the camera.
 ```xml
 <com.blendvision.stream.ingest.ui.view.StreamIngestView
    android:id="@+id/stream_ingest_view"
@@ -62,8 +63,8 @@ android:name=".MainActivity"
    app:layout_constraintTop_toTopOf="parent" />
 ```
 
-### 3. Listen to the stream state and connect to the RTMP server.
-
+### 3. Start publish
+Set up a stream state listener, connect to the RTMP server, and start publishing your stream by streaming name when a CONNECT_SUCCESS state is received.
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -77,7 +78,9 @@ private fun initListener() {
     streamIngestView.streamStatus.collect { state ->
         when (state) {
             State.CONNECT_SUCCESS -> streamIngestView.startPublish("YOUR_STREAM_NAME")
-            State.PUBLISH_START -> {}// start publish
+            State.PUBLISH_START -> {
+                // onPublished
+            }
             else -> Unit
         }
     }
@@ -85,7 +88,8 @@ private fun initListener() {
 ```
 
 
-### 4. please ensure to release the streamingest view to prevent memory leaks When the current page is destroyed.
+### 4. Stop Publish
+Please ensure to release the streamingest view to prevent memory leaks when the current page is destroyed.
 ```kotlin
 override fun onStop() {
     super.onStop()

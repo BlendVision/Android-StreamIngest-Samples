@@ -88,7 +88,6 @@ class StreamFragment : Fragment() {
             Log.e("StreamIngestView_STATE", state.toString())
             when (state) {
                 State.CONNECT_SUCCESS -> binding.streamIngestView.startPublish(streamName)
-                State.PUBLISH_START -> binding.playOrPauseButton.visibility = View.INVISIBLE
                 else -> Unit
             }
         }.launchIn(lifecycleScope)
