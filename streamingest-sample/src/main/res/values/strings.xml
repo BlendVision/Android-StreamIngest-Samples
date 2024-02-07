@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">streamingest-sample</string>
+
+    <string name="go">GO!</string>
+    <string name="settings">設定</string>
+    <string name="permission_rejected">權限被拒絕，某些功能可能無法使用。請授予所需權限。</string>
+    <string name="input_rtmp_url">input rtmp url</string>
+    <string name="input_stream_name">input stream name</string>
+    <string name="welcome_to_streamingest">Are you ready to enjoy streamingest?</string>
+    <string name="start_yourself_stream">Start yourself Stream!</string>
+
+    <string name="low_quality">low quality</string>
+    <string name="medium_quality">medium quality</string>
+    <string name="high_quality">high quality</string>
+
+</resources>

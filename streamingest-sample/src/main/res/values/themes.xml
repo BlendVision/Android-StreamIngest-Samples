@@ -1,0 +1,51 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/md_theme_primary</item>
+        <item name="android:windowBackground">@color/md_theme_background</item>
+        <item name="android:colorAccent">@color/md_theme_secondary</item>
+        <item name="android:navigationBarColor">@color/md_theme_primary</item>
+        <item name="android:textColorPrimary">@color/md_theme_onSurface</item>
+        <item name="android:textColorSecondary">@color/md_theme_onSurfaceVariant</item>
+        <item name="android:colorButtonNormal">@color/md_theme_primary</item>
+        <item name="android:colorControlActivated">@color/md_theme_secondary</item>
+        <item name="android:colorControlHighlight">@color/md_theme_secondary</item>
+        <item name="android:colorControlNormal">@color/md_theme_onSurfaceVariant</item>
+        <item name="android:colorPrimary">@color/md_theme_primary</item>
+        <item name="android:colorPrimaryDark">@color/md_theme_primary</item>
+    </style>
+
+    <style name="CustomTextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+        <item name="hintTextColor">@color/md_theme_primary</item>
+        <item name="boxStrokeColor">@color/selector_box_stroke</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxStrokeErrorColor">@color/md_theme_error</item>
+        <item name="android:textColorHint">@color/md_theme_onSurfaceVariant</item>
+        <item name="android:textColor">@color/md_theme_onSurface</item>
+        <item name="android:padding">8dp</item>
+        <item name="endIconMode">clear_text</item>
+        <item name="endIconTint">@color/md_theme_onSurfaceVariant</item>
+        <item name="helperTextTextColor">@color/md_theme_onSurfaceVariant</item>
+        <item name="errorTextColor">@color/md_theme_error</item>
+    </style>
+
+    <style name="CustomTextInputEditText" parent="Widget.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="android:layout_gravity">start</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/md_theme_onSurface</item>
+        <item name="android:textColorHint">@color/md_theme_onSurfaceVariant</item>
+        <item name="android:imeOptions">actionUnspecified</item>
+        <item name="android:inputType">text</item>
+    </style>
+
+    <style name="CustomButton" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/md_theme_onPrimary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:backgroundTint">@color/md_theme_primary</item>
+        <item name="rippleColor">@color/md_theme_secondary</item>
+    </style>
+
+</resources>
