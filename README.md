@@ -86,7 +86,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 }
 private fun initListener() {
-   streamIngestView.streamStatus.collect { state ->
+   streamIngestView.streamStatus.flowWithLifecycle(lifecycle).onEach { state ->
       when (state) {
          State.INITIALIZED -> {
             //initialized.
@@ -104,7 +104,7 @@ private fun initListener() {
             //disconnect
          }
       }
-   }
+   }.launchIn(lifecycleScope)
 
    streamIngestView.error.flowWithLifecycle(lifecycle).onEach { error ->
       //error.message
