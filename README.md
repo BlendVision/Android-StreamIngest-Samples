@@ -130,6 +130,30 @@ override fun onDestroy() {
 }
 ```
 
+### 5. Beauty filter
+
+Register beauty filters to optimize streaming.
+```kotlin=
+
+val skinSmoothFilter: BeautyFilter = SkinSmoothFilter(50)
+streamIngestView.registerFilter(listOf(skinSmoothFilter))
+
+
+sealed interface BeautyFilter {
+    data class SkinSmoothFilter(
+        val intensity: Int
+    ) : BeautyFilter
+
+    ...
+}
+```
+
+Unregister the filter when you want to rollback to original streaming.
+```kotlin
+streamIngestView.unregisterFilter(listOf(skinSmoothFilter))
+```
+
+
 ## Others StreamIngestView API
 
 ```kotlin
