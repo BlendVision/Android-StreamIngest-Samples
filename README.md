@@ -9,6 +9,8 @@ The streamingest SDK is a streaming solution based on the RTMP protocol.
 - **targetSdkVersion**: 34
 - **Kotlin Version**: 1.9.x or later
 
+:warning::warning: To run this example, a valid license configuration needs to be set. Please inform our contact window for assistance.
+
 ## Importing AAR into Project
 
 There are multiple ways to integrate an AAR file into your Android project. Below are the methods,
