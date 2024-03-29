@@ -5,12 +5,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SeekBar
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import com.blendvision.stream.ingest.domain.entities.State
-import com.blendvision.stream.ingest.domain.entities.StreamQuality
+import com.blendvision.stream.ingest.domain.entity.BeautyFilter
+import com.blendvision.stream.ingest.domain.entity.State
+import com.blendvision.stream.ingest.domain.entity.StreamQuality
 import com.blendvision.stream.ingest.sample.databinding.FragmentStreamBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -22,7 +24,7 @@ import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 
 
-class StreamFragment : Fragment() {
+class StreamFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
 
     private var _binding: FragmentStreamBinding? = null
 
@@ -31,6 +33,8 @@ class StreamFragment : Fragment() {
     private var rtmpUrl: String? = null
 
     private var job: Job? = null
+
+    private val smoothFilter = BeautyFilter.SkinSmoothFilter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +56,8 @@ class StreamFragment : Fragment() {
         initView()
         initObserver()
         setOnClickListener()
+
+        initBeautyFilter()
     }
 
     private fun initView() {
@@ -86,6 +92,7 @@ class StreamFragment : Fragment() {
                 binding.streamIngestView.stopStream()
             }
         }
+        binding.smoothFilterBar.setOnSeekBarChangeListener(this)
     }
 
     private fun initObserver() {
@@ -122,6 +129,12 @@ class StreamFragment : Fragment() {
 
     }
 
+    private fun initBeautyFilter() {
+        binding.streamIngestView.registerFilter(
+            listOf(smoothFilter)
+        )
+    }
+
     private fun recordTime() {
         job?.cancel()
         job = CoroutineScope(Dispatchers.Main).launch {
@@ -145,6 +158,17 @@ class StreamFragment : Fragment() {
         Toast.makeText(requireActivity(), message, Toast.LENGTH_SHORT).show()
         binding.stateLabel.text = "State: $message"
     }
+
+    /**
+     * OnSeekBarChangeListener
+     */
+    override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+        smoothFilter.intensity = progress
+    }
+
+    override fun onStartTrackingTouch(seekBar: SeekBar?) = Unit
+
+    override fun onStopTrackingTouch(seekBar: SeekBar?) = Unit
 
     companion object {
         enum class Quality { LOW, MEDIUM, HIGH }
