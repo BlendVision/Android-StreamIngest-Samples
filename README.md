@@ -65,19 +65,6 @@ Add `configChanges` tag in your `AndroidManifest.xml` to prevent the activity fr
 </activity>
 ```
 
-#### Installing an HTTP response cache
-Enable caching of all of your application's HTTP requests by installing the cache at application startup.
-```kotlin
-try {
-   val httpCacheDir = File(cacheDir, "http")
-   val httpCacheSize = (50 * 1024 * 1024).toLong() // 50 MB
-   HttpResponseCache.install(httpCacheDir, httpCacheSize)
-   Log.i(TAG, "HTTP response cache installation done")
-} catch (e: IOException) {
-   Log.w(TAG, "HTTP response cache installation failed:$e")
-}
-```
-
 ### 2. Integrate `StreamingestView` in Your Layout
 
 This view provides a preview rendering from the camera.
