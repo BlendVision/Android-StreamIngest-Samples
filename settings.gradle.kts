@@ -16,6 +16,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Android-Streamingest-SDK"
+rootProject.name = "Android-Streamingest-Samples"
 
 include(":streamingest-sample")
