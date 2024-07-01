@@ -8,7 +8,6 @@ android {
 
 dependencies {
 
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.aar", "*.jar"))))
     implementation(library.streamingest)
 
     implementation(library.navigation.fragment.ktx)

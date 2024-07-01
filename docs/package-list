@@ -1,0 +1,10 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+module:common
+com.blendvision.stream.ingest.common.presentation.entity
+module:core
+com.blendvision.stream.ingest.core.presentation.callback
+com.blendvision.stream.ingest.core.presentation.factory
+module:ui
+com.blendvision.stream.ingest.ui.presentation.view

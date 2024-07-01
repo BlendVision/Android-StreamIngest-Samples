@@ -9,39 +9,9 @@ The streamingest SDK is a streaming solution based on the RTMP protocol.
 - **targetSdkVersion**: 34
 - **Kotlin Version**: 1.9.x or later
 
-## Importing AAR into Project
-
-There are multiple ways to integrate an AAR file into your Android project. Below are the methods,
-including a simplified approach using `implementation fileTree`.
-
-- `beauty-library-core.aar`
-- `beauty-library-face-tracking.aar`
-- `beauty-library-handler-core.aar`
-- `beauty-library-makeup.aar`
-- `beauty-library-product-handler.aar`
-
-### Manual Import with `fileTree`
-
-1. **Place AAR File in `libs` Directory**: Ensure the `.aar` (and/or `.jar`) file is located within
-   the `libs` directory of your Android project.
-
-2. **Update `build.gradle`**: In your app-level `build.gradle` file, add the following line in
-   the `dependencies` block:
-
-   ```groovy
-   implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
-   ```
-
-   This will include all `.jar` and `.aar` files that are in the `libs` directory into your project.
-
-   > **Note**: After making changes, don't forget to sync your Gradle files to ensure that the
-   > project
-
 ## Integration
 
 ### In your settings.gradle file, `dependencyResolutionManagement` sections:
-
-[Gets username and password](https://github.com/BlendVision/Android-StreamIngest-SDK/wiki/Android%E2%80%90StreamIngest%E2%80%90SDK-pull-credentials)
 
 ```groovy
 dependencyResolutionManagement {
@@ -54,8 +24,8 @@ dependencyResolutionManagement {
       maven {
          url = uri("https://maven.pkg.github.com/blendvision/Android-StreamIngest-SDK")
          credentials {
-            username = //TODO
-            password = //TODO
+             username = "bv-github-access"
+             password = "ghp_veo1hAnJoT4jv0RY@RzHSCLKMm7UFoD4PoWda" //Please remove "@" character from password
          }
       }
       //------------------//
@@ -67,7 +37,7 @@ dependencyResolutionManagement {
 
 ```groovy
 dependencies {
-   implementation 'com.blendvision.stream.ingest:streamingest:2.0.0'
+    implementation 'com.blendvision.stream.ingest:streamingest:2.0.1'
 }
 ```
 
@@ -80,14 +50,11 @@ during screen orientation changes.
 
 ```xml
 
-<activity
-   android:name=".MainActivity"
-   android:configChanges="keyboardHidden|orientation|screenSize"
-   android:exported="true">
-      <intent-filter>
-         <action android:name="android.intent.action.MAIN" />
-         <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
+<activity android:name=".MainActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
 </activity>
 ```
 
@@ -97,10 +64,7 @@ This view provides a preview rendering from the camera.
 
 ```xml
 
-<com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView 
-        android:id="@+id/streamIngestView" 
-        android:layout_width="match_parent" 
-        android:layout_height="match_parent"
+<com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView android:id="@+id/streamIngestView" android:layout_width="match_parent" android:layout_height="match_parent"
 />
 ```
 
@@ -110,59 +74,59 @@ Set up a stream state listener, and start publishing your stream.
 
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
-   super.onCreate(savedInstanceState)
+    super.onCreate(savedInstanceState)
 
-   val streamConfig = StreamConfig(licenseKey = "YOUR_LICENSE_KEY")
+    val streamConfig = StreamConfig(licenseKey = "YOUR_LICENSE_KEY")
 
-   //create stream ingest,and set validation listener
-   StreamIngest.Factory(context, streamConfig).create(
-      object:ValidationListener {
-         override fun onValidationSuccess(streamIngest: StreamIngest) {
-            //when validation success,it will return StreamIngest instance
-            setupStreamIngestView(streamIngest)
-         }
+    //create stream ingest,and set validation listener
+    StreamIngest.Factory(context, streamConfig).create(
+        object : ValidationListener {
+            override fun onValidationSuccess(streamIngest: StreamIngest) {
+                //when validation success,it will return StreamIngest instance
+                setupStreamIngestView(streamIngest)
+            }
 
-         override fun onValidationFailed(exception: Exception) {
-            //validation failed
-         }
-      }
-   )
+            override fun onValidationFailed(exception: Exception) {
+                //validation failed
+            }
+        }
+    )
 
 }
 
 private fun setupStreamIngestView(streamIngest: StreamIngest) {
-   observeStreamStatus(streamIngest)
-   streamIngest.setStreamQuality(StreamQuality.High())
-   val filters = listOf(BeautyFilter.SkinSmoothFilter())
-   //if you want to unregister filter call below: `streamIngest.unregisterFilter(filters)`
-   streamIngest.registerFilter(filters)
-   streamIngestView.streamIngest = streamIngest
+    observeStreamStatus(streamIngest)
+    streamIngest.setStreamQuality(StreamQuality.High())
+    val filters = listOf(BeautyFilter.SkinSmoothFilter())
+    //if you want to unregister filter call below: `streamIngest.unregisterFilter(filters)`
+    streamIngest.registerFilter(filters)
+    streamIngestView.streamIngest = streamIngest
 }
 
 private fun observeStreamStatus(streamIngest: StreamIngest) {
-   streamIngest.streamStatus.onEach { streamState ->
-      when (streamState) {
-         StreamState.INITIALIZED -> {
-            //initialized.
-         }
+    streamIngest.streamStatus.onEach { streamState ->
+        when (streamState) {
+            StreamState.INITIALIZED -> {
+                //initialized.
+            }
 
-         StreamState.CONNECT_STARTED -> {
-            //connect stared.
-         }
+            StreamState.CONNECT_STARTED -> {
+                //connect stared.
+            }
 
-         StreamState.CONNECT_SUCCESS -> {
-            //connect success
-         }
+            StreamState.CONNECT_SUCCESS -> {
+                //connect success
+            }
 
-         StreamState.DISCONNECT -> {
-            //disconnect
-         }
-      }
-   }.launchIn(lifecycleScope)
+            StreamState.DISCONNECT -> {
+                //disconnect
+            }
+        }
+    }.launchIn(lifecycleScope)
 
-   streamIngest.error.onEach { error ->
-      //error.message
-   }.launchIn(lifecycleScope)
+    streamIngest.error.onEach { error ->
+        //error.message
+    }.launchIn(lifecycleScope)
 }
 
 ```
@@ -186,9 +150,9 @@ destroyed.
 
 ```kotlin
 override fun onDestroy() {
-   super.onDestroy()
-   streamIngest.release()
-   streamIngestView.streamIngest = null
+    super.onDestroy()
+    streamIngest.release()
+    streamIngestView.streamIngest = null
 }
 ```
 
