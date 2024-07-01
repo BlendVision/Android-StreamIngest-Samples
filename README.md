@@ -64,7 +64,10 @@ This view provides a preview rendering from the camera.
 
 ```xml
 
-<com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView android:id="@+id/streamIngestView" android:layout_width="match_parent" android:layout_height="match_parent"
+<com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView
+   android:id="@+id/streamIngestView"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
 />
 ```
 
