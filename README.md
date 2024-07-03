@@ -134,7 +134,8 @@ private fun observeStreamStatus(streamIngest: StreamIngest) {
 
 ```
 
-Initiates the streaming process with the provided rtmp url and stream key.
+Initiates the streaming process with the provided RTMP URL and stream key.
+Note: Before calling the method, please ensure `streamState` is `StreamState.INITIALIZED`, which means streamIngestView has been initialized and prepared.
 
 ```kotlin
 streamIngest.startStream("YOUR_RTMP_URL", "YOUR_STREAM_KEY")
