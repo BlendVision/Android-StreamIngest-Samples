@@ -22,7 +22,7 @@ dependencyResolutionManagement {
       //-----add below------//
       maven { url = uri("https://jitpack.io") }
       maven {
-         url = uri("https://maven.pkg.github.com/blendvision/Android-StreamIngest-SDK")
+         url = uri("https://maven.pkg.github.com/blendvision/Android-StreamIngest-Samples")
          credentials {
              username = "bv-github-access"
              password = "ghp_veo1hAnJoT4jv0RY@RzHSCLKMm7UFoD4PoWda" //Please remove "@" character from password
@@ -37,7 +37,7 @@ dependencyResolutionManagement {
 
 ```groovy
 dependencies {
-    implementation 'com.blendvision.stream.ingest:streamingest:2.0.1'
+    implementation 'com.blendvision.stream.ingest:streamingest:2.0.2'
 }
 ```
 
