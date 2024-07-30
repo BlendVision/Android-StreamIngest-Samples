@@ -5,6 +5,7 @@ pluginManagement {
     repositories {
         google {
             content {
+                includeGroupByRegex("com\\.blendvision.*")
                 includeGroupByRegex("com\\.android.*")
                 includeGroupByRegex("com\\.google.*")
                 includeGroupByRegex("androidx.*")
@@ -21,7 +22,7 @@ dependencyResolutionManagement {
         mavenCentral()
         maven { url = uri("https://jitpack.io") }
         maven {
-            url = uri("https://maven.pkg.github.com/blendvision/Android-StreamIngest-SDK")
+            url = uri("https://maven.pkg.github.com/blendvision/Android-StreamIngest-Samples")
             credentials {
                 val properties = getLocalProperties()
                 username = properties.getProperty("github.packages.user")

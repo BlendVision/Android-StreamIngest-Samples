@@ -1,1 +1,822 @@
-[{"name":"abstract fun mutedAudio(isMute: Boolean)","description":"com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.mutedAudio","location":"core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/muted-audio.html","searchKeys":["mutedAudio","abstract fun mutedAudio(isMute: Boolean)","com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.mutedAudio"]},{"name":"abstract fun mutedVideo(isMute: Boolean)","description":"com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.mutedVideo","location":"core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/muted-video.html","searchKeys":["mutedVideo","abstract fun mutedVideo(isMute: Boolean)","com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.mutedVideo"]},{"name":"abstract fun onConfigChanged()","description":"com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.onConfigChanged","location":"core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/on-config-changed.html","searchKeys":["onConfigChanged","abstract fun onConfigChanged()","com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.onConfigChanged"]},{"name":"abstract fun onValidationFailed(exception: Exception)","description":"com.blendvision.stream.ingest.core.presentation.callback.ValidationListener.onValidationFailed","location":"core/com.blendvision.stream.ingest.core.presentation.callback/-validation-listener/on-validation-failed.html","searchKeys":["onValidationFailed","abstract fun onValidationFailed(exception: Exception)","com.blendvision.stream.ingest.core.presentation.callback.ValidationListener.onValidationFailed"]},{"name":"abstract fun onValidationSuccess(streamIngest: StreamIngest)","description":"com.blendvision.stream.ingest.core.presentation.callback.ValidationListener.onValidationSuccess","location":"core/com.blendvision.stream.ingest.core.presentation.callback/-validation-listener/on-validation-success.html","searchKeys":["onValidationSuccess","abstract fun onValidationSuccess(streamIngest: StreamIngest)","com.blendvision.stream.ingest.core.presentation.callback.ValidationListener.onValidationSuccess"]},{"name":"abstract fun registerFilter(filters: List<BeautyFilter>)","description":"com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.registerFilter","location":"core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/register-filter.html","searchKeys":["registerFilter","abstract fun registerFilter(filters: List<BeautyFilter>)","com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.registerFilter"]},{"name":"abstract fun release()","description":"com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.release","location":"core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/release.html","searchKeys":["release","abstract fun release()","com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.release"]},{"name":"abstract fun setStreamQuality(streamQuality: StreamQuality)","description":"com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.setStreamQuality","location":"core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/set-stream-quality.html","searchKeys":["setStreamQuality","abstract fun setStreamQuality(streamQuality: StreamQuality)","com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.setStreamQuality"]},{"name":"abstract fun startCameraPreview()","description":"com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.startCameraPreview","location":"core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/start-camera-preview.html","searchKeys":["startCameraPreview","abstract fun startCameraPreview()","com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.startCameraPreview"]},{"name":"abstract fun startStream(rtmpUrl: String, streamKey: String)","description":"com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.startStream","location":"core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/start-stream.html","searchKeys":["startStream","abstract fun startStream(rtmpUrl: String, streamKey: String)","com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.startStream"]},{"name":"abstract fun stopCameraPreview()","description":"com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.stopCameraPreview","location":"core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/stop-camera-preview.html","searchKeys":["stopCameraPreview","abstract fun stopCameraPreview()","com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.stopCameraPreview"]},{"name":"abstract fun stopStream()","description":"com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.stopStream","location":"core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/stop-stream.html","searchKeys":["stopStream","abstract fun stopStream()","com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.stopStream"]},{"name":"abstract fun switchCamera()","description":"com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.switchCamera","location":"core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/switch-camera.html","searchKeys":["switchCamera","abstract fun switchCamera()","com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.switchCamera"]},{"name":"abstract fun unregisterFilter(filters: List<BeautyFilter>)","description":"com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.unregisterFilter","location":"core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/unregister-filter.html","searchKeys":["unregisterFilter","abstract fun unregisterFilter(filters: List<BeautyFilter>)","com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.unregisterFilter"]},{"name":"abstract val error: Flow<Exception>","description":"com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.error","location":"core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/error.html","searchKeys":["error","abstract val error: Flow<Exception>","com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.error"]},{"name":"abstract val streamStatus: Flow<StreamState>","description":"com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.streamStatus","location":"core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/stream-status.html","searchKeys":["streamStatus","abstract val streamStatus: Flow<StreamState>","com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.streamStatus"]},{"name":"class Factory(context: Context, streamConfig: StreamConfig) : StreamIngestFactory","description":"com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.Factory","location":"core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/-factory/index.html","searchKeys":["Factory","class Factory(context: Context, streamConfig: StreamConfig) : StreamIngestFactory","com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.Factory"]},{"name":"constructor(context: Context, streamConfig: StreamConfig)","description":"com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.Factory.Factory","location":"core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/-factory/-factory.html","searchKeys":["Factory","constructor(context: Context, streamConfig: StreamConfig)","com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.Factory.Factory"]},{"name":"interface StreamIngest","description":"com.blendvision.stream.ingest.core.presentation.factory.StreamIngest","location":"core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/index.html","searchKeys":["StreamIngest","interface StreamIngest","com.blendvision.stream.ingest.core.presentation.factory.StreamIngest"]},{"name":"interface ValidationListener","description":"com.blendvision.stream.ingest.core.presentation.callback.ValidationListener","location":"core/com.blendvision.stream.ingest.core.presentation.callback/-validation-listener/index.html","searchKeys":["ValidationListener","interface ValidationListener","com.blendvision.stream.ingest.core.presentation.callback.ValidationListener"]},{"name":"abstract fun onChanged(filter: BeautyFilter)","description":"com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.FilterSettingCallback.onChanged","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/-filter-setting-callback/on-changed.html","searchKeys":["onChanged","abstract fun onChanged(filter: BeautyFilter)","com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.FilterSettingCallback.onChanged"]},{"name":"abstract fun setToDefault()","description":"com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.setToDefault","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/set-to-default.html","searchKeys":["setToDefault","abstract fun setToDefault()","com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.setToDefault"]},{"name":"abstract val audioBitrate: Int","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.audioBitrate","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/audio-bitrate.html","searchKeys":["audioBitrate","abstract val audioBitrate: Int","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.audioBitrate"]},{"name":"abstract val code: Int","description":"com.blendvision.stream.ingest.common.presentation.entity.Exception.code","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-exception/code.html","searchKeys":["code","abstract val code: Int","com.blendvision.stream.ingest.common.presentation.entity.Exception.code"]},{"name":"abstract val errorMessage: String","description":"com.blendvision.stream.ingest.common.presentation.entity.Exception.errorMessage","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-exception/error-message.html","searchKeys":["errorMessage","abstract val errorMessage: String","com.blendvision.stream.ingest.common.presentation.entity.Exception.errorMessage"]},{"name":"abstract val height: Int","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.height","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/height.html","searchKeys":["height","abstract val height: Int","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.height"]},{"name":"abstract val reason: String","description":"com.blendvision.stream.ingest.common.presentation.entity.Exception.reason","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-exception/reason.html","searchKeys":["reason","abstract val reason: String","com.blendvision.stream.ingest.common.presentation.entity.Exception.reason"]},{"name":"abstract val videoBitrate: Int","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.videoBitrate","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/video-bitrate.html","searchKeys":["videoBitrate","abstract val videoBitrate: Int","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.videoBitrate"]},{"name":"abstract val width: Int","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.width","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/width.html","searchKeys":["width","abstract val width: Int","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.width"]},{"name":"class SkinSmoothFilter : BeautyFilter","description":"com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/-skin-smooth-filter/index.html","searchKeys":["SkinSmoothFilter","class SkinSmoothFilter : BeautyFilter","com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter"]},{"name":"constructor()","description":"com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter.SkinSmoothFilter","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/-skin-smooth-filter/-skin-smooth-filter.html","searchKeys":["SkinSmoothFilter","constructor()","com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter.SkinSmoothFilter"]},{"name":"constructor(code: Int, reason: String, errorMessage: String)","description":"com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.StreamException","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-stream-exception/-stream-exception.html","searchKeys":["StreamException","constructor(code: Int, reason: String, errorMessage: String)","com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.StreamException"]},{"name":"constructor(licenseKey: String)","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamConfig.StreamConfig","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-config/-stream-config.html","searchKeys":["StreamConfig","constructor(licenseKey: String)","com.blendvision.stream.ingest.common.presentation.entity.StreamConfig.StreamConfig"]},{"name":"constructor(view: View)","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamState.INITIALIZED.INITIALIZED","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/-i-n-i-t-i-a-l-i-z-e-d/-i-n-i-t-i-a-l-i-z-e-d.html","searchKeys":["INITIALIZED","constructor(view: View)","com.blendvision.stream.ingest.common.presentation.entity.StreamState.INITIALIZED.INITIALIZED"]},{"name":"constructor(width: Int = 1280, height: Int = 720, videoBitrate: Int = 1600 * 1024, audioBitrate: Int = 96 * 1024)","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.Medium","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-medium/-medium.html","searchKeys":["Medium","constructor(width: Int = 1280, height: Int = 720, videoBitrate: Int = 1600 * 1024, audioBitrate: Int = 96 * 1024)","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.Medium"]},{"name":"constructor(width: Int = 1920, height: Int = 1080, videoBitrate: Int = 3200 * 1024, audioBitrate: Int = 128 * 1024)","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.High","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-high/-high.html","searchKeys":["High","constructor(width: Int = 1920, height: Int = 1080, videoBitrate: Int = 3200 * 1024, audioBitrate: Int = 128 * 1024)","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.High"]},{"name":"constructor(width: Int = 854, height: Int = 480, videoBitrate: Int = 800 * 1024, audioBitrate: Int = 64 * 1024)","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.Low","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-low/-low.html","searchKeys":["Low","constructor(width: Int = 854, height: Int = 480, videoBitrate: Int = 800 * 1024, audioBitrate: Int = 64 * 1024)","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.Low"]},{"name":"data class High(val width: Int = 1920, val height: Int = 1080, val videoBitrate: Int = 3200 * 1024, val audioBitrate: Int = 128 * 1024) : StreamQuality","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-high/index.html","searchKeys":["High","data class High(val width: Int = 1920, val height: Int = 1080, val videoBitrate: Int = 3200 * 1024, val audioBitrate: Int = 128 * 1024) : StreamQuality","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High"]},{"name":"data class INITIALIZED(val view: View) : StreamState","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamState.INITIALIZED","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/-i-n-i-t-i-a-l-i-z-e-d/index.html","searchKeys":["INITIALIZED","data class INITIALIZED(val view: View) : StreamState","com.blendvision.stream.ingest.common.presentation.entity.StreamState.INITIALIZED"]},{"name":"data class Low(val width: Int = 854, val height: Int = 480, val videoBitrate: Int = 800 * 1024, val audioBitrate: Int = 64 * 1024) : StreamQuality","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-low/index.html","searchKeys":["Low","data class Low(val width: Int = 854, val height: Int = 480, val videoBitrate: Int = 800 * 1024, val audioBitrate: Int = 64 * 1024) : StreamQuality","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low"]},{"name":"data class Medium(val width: Int = 1280, val height: Int = 720, val videoBitrate: Int = 1600 * 1024, val audioBitrate: Int = 96 * 1024) : StreamQuality","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-medium/index.html","searchKeys":["Medium","data class Medium(val width: Int = 1280, val height: Int = 720, val videoBitrate: Int = 1600 * 1024, val audioBitrate: Int = 96 * 1024) : StreamQuality","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium"]},{"name":"data class StreamConfig(val licenseKey: String)","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamConfig","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-config/index.html","searchKeys":["StreamConfig","data class StreamConfig(val licenseKey: String)","com.blendvision.stream.ingest.common.presentation.entity.StreamConfig"]},{"name":"data class StreamException(val code: Int, val reason: String, val errorMessage: String) : Exception","description":"com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-stream-exception/index.html","searchKeys":["StreamException","data class StreamException(val code: Int, val reason: String, val errorMessage: String) : Exception","com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException"]},{"name":"data object CONNECT_STARTED : StreamState","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamState.CONNECT_STARTED","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/-c-o-n-n-e-c-t_-s-t-a-r-t-e-d/index.html","searchKeys":["CONNECT_STARTED","data object CONNECT_STARTED : StreamState","com.blendvision.stream.ingest.common.presentation.entity.StreamState.CONNECT_STARTED"]},{"name":"data object CONNECT_SUCCESS : StreamState","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamState.CONNECT_SUCCESS","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/-c-o-n-n-e-c-t_-s-u-c-c-e-s-s/index.html","searchKeys":["CONNECT_SUCCESS","data object CONNECT_SUCCESS : StreamState","com.blendvision.stream.ingest.common.presentation.entity.StreamState.CONNECT_SUCCESS"]},{"name":"data object DISCONNECT : StreamState","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamState.DISCONNECT","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/-d-i-s-c-o-n-n-e-c-t/index.html","searchKeys":["DISCONNECT","data object DISCONNECT : StreamState","com.blendvision.stream.ingest.common.presentation.entity.StreamState.DISCONNECT"]},{"name":"interface Exception","description":"com.blendvision.stream.ingest.common.presentation.entity.Exception","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-exception/index.html","searchKeys":["Exception","interface Exception","com.blendvision.stream.ingest.common.presentation.entity.Exception"]},{"name":"interface FilterSettingCallback","description":"com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.FilterSettingCallback","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/-filter-setting-callback/index.html","searchKeys":["FilterSettingCallback","interface FilterSettingCallback","com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.FilterSettingCallback"]},{"name":"interface StreamQuality","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/index.html","searchKeys":["StreamQuality","interface StreamQuality","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality"]},{"name":"object Companion","description":"com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter.Companion","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/-skin-smooth-filter/-companion/index.html","searchKeys":["Companion","object Companion","com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter.Companion"]},{"name":"object Companion","description":"com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-companion/index.html","searchKeys":["Companion","object Companion","com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion"]},{"name":"open override fun setToDefault()","description":"com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter.setToDefault","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/-skin-smooth-filter/set-to-default.html","searchKeys":["setToDefault","open override fun setToDefault()","com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter.setToDefault"]},{"name":"open override val audioBitrate: Int","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.audioBitrate","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-high/audio-bitrate.html","searchKeys":["audioBitrate","open override val audioBitrate: Int","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.audioBitrate"]},{"name":"open override val audioBitrate: Int","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.audioBitrate","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-low/audio-bitrate.html","searchKeys":["audioBitrate","open override val audioBitrate: Int","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.audioBitrate"]},{"name":"open override val audioBitrate: Int","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.audioBitrate","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-medium/audio-bitrate.html","searchKeys":["audioBitrate","open override val audioBitrate: Int","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.audioBitrate"]},{"name":"open override val code: Int","description":"com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.code","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-stream-exception/code.html","searchKeys":["code","open override val code: Int","com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.code"]},{"name":"open override val errorMessage: String","description":"com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.errorMessage","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-stream-exception/error-message.html","searchKeys":["errorMessage","open override val errorMessage: String","com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.errorMessage"]},{"name":"open override val height: Int = 1080","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.height","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-high/height.html","searchKeys":["height","open override val height: Int = 1080","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.height"]},{"name":"open override val height: Int = 480","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.height","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-low/height.html","searchKeys":["height","open override val height: Int = 480","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.height"]},{"name":"open override val height: Int = 720","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.height","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-medium/height.html","searchKeys":["height","open override val height: Int = 720","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.height"]},{"name":"open override val reason: String","description":"com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.reason","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-stream-exception/reason.html","searchKeys":["reason","open override val reason: String","com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.reason"]},{"name":"open override val videoBitrate: Int","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.videoBitrate","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-high/video-bitrate.html","searchKeys":["videoBitrate","open override val videoBitrate: Int","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.videoBitrate"]},{"name":"open override val videoBitrate: Int","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.videoBitrate","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-low/video-bitrate.html","searchKeys":["videoBitrate","open override val videoBitrate: Int","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.videoBitrate"]},{"name":"open override val videoBitrate: Int","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.videoBitrate","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-medium/video-bitrate.html","searchKeys":["videoBitrate","open override val videoBitrate: Int","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.videoBitrate"]},{"name":"open override val width: Int = 1280","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.width","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-medium/width.html","searchKeys":["width","open override val width: Int = 1280","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.width"]},{"name":"open override val width: Int = 1920","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.width","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-high/width.html","searchKeys":["width","open override val width: Int = 1920","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.width"]},{"name":"open override val width: Int = 854","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.width","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-low/width.html","searchKeys":["width","open override val width: Int = 854","com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.width"]},{"name":"sealed class BeautyFilter","description":"com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/index.html","searchKeys":["BeautyFilter","sealed class BeautyFilter","com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter"]},{"name":"sealed class StreamState","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamState","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/index.html","searchKeys":["StreamState","sealed class StreamState","com.blendvision.stream.ingest.common.presentation.entity.StreamState"]},{"name":"val ERROR_REASON_CONNECTION_FAILED: Pair<Int, String>","description":"com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_CONNECTION_FAILED","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-companion/-e-r-r-o-r_-r-e-a-s-o-n_-c-o-n-n-e-c-t-i-o-n_-f-a-i-l-e-d.html","searchKeys":["ERROR_REASON_CONNECTION_FAILED","val ERROR_REASON_CONNECTION_FAILED: Pair<Int, String>","com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_CONNECTION_FAILED"]},{"name":"val ERROR_REASON_ENCODER: Pair<Int, String>","description":"com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_ENCODER","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-companion/-e-r-r-o-r_-r-e-a-s-o-n_-e-n-c-o-d-e-r.html","searchKeys":["ERROR_REASON_ENCODER","val ERROR_REASON_ENCODER: Pair<Int, String>","com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_ENCODER"]},{"name":"val ERROR_REASON_LICENSE_FAILED: Pair<Int, String>","description":"com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_LICENSE_FAILED","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-companion/-e-r-r-o-r_-r-e-a-s-o-n_-l-i-c-e-n-s-e_-f-a-i-l-e-d.html","searchKeys":["ERROR_REASON_LICENSE_FAILED","val ERROR_REASON_LICENSE_FAILED: Pair<Int, String>","com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_LICENSE_FAILED"]},{"name":"val ERROR_REASON_UNKNOWN: Pair<Int, String>","description":"com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_UNKNOWN","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-companion/-e-r-r-o-r_-r-e-a-s-o-n_-u-n-k-n-o-w-n.html","searchKeys":["ERROR_REASON_UNKNOWN","val ERROR_REASON_UNKNOWN: Pair<Int, String>","com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_UNKNOWN"]},{"name":"val licenseKey: String","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamConfig.licenseKey","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-config/license-key.html","searchKeys":["licenseKey","val licenseKey: String","com.blendvision.stream.ingest.common.presentation.entity.StreamConfig.licenseKey"]},{"name":"val view: View","description":"com.blendvision.stream.ingest.common.presentation.entity.StreamState.INITIALIZED.view","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/-i-n-i-t-i-a-l-i-z-e-d/view.html","searchKeys":["view","val view: View","com.blendvision.stream.ingest.common.presentation.entity.StreamState.INITIALIZED.view"]},{"name":"var intensity: Int","description":"com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter.intensity","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/-skin-smooth-filter/intensity.html","searchKeys":["intensity","var intensity: Int","com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter.intensity"]},{"name":"var notifySetting: BeautyFilter.FilterSettingCallback?","description":"com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.notifySetting","location":"common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/notify-setting.html","searchKeys":["notifySetting","var notifySetting: BeautyFilter.FilterSettingCallback?","com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.notifySetting"]},{"name":"class StreamIngestView constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) : FrameLayout","description":"com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView","location":"ui/com.blendvision.stream.ingest.ui.presentation.view/-stream-ingest-view/index.html","searchKeys":["StreamIngestView","class StreamIngestView constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) : FrameLayout","com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView"]},{"name":"constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0)","description":"com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView.StreamIngestView","location":"ui/com.blendvision.stream.ingest.ui.presentation.view/-stream-ingest-view/-stream-ingest-view.html","searchKeys":["StreamIngestView","constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0)","com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView.StreamIngestView"]},{"name":"object Companion","description":"com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView.Companion","location":"ui/com.blendvision.stream.ingest.ui.presentation.view/-stream-ingest-view/-companion/index.html","searchKeys":["Companion","object Companion","com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView.Companion"]},{"name":"var streamIngest: StreamIngest?","description":"com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView.streamIngest","location":"ui/com.blendvision.stream.ingest.ui.presentation.view/-stream-ingest-view/stream-ingest.html","searchKeys":["streamIngest","var streamIngest: StreamIngest?","com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView.streamIngest"]}]
+[
+  {
+    "name": "abstract fun mutedAudio(isMute: Boolean)",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.mutedAudio",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/muted-audio.html",
+    "searchKeys": [
+      "mutedAudio",
+      "abstract fun mutedAudio(isMute: Boolean)",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.mutedAudio"
+    ]
+  },
+  {
+    "name": "abstract fun mutedVideo(isMute: Boolean)",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.mutedVideo",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/muted-video.html",
+    "searchKeys": [
+      "mutedVideo",
+      "abstract fun mutedVideo(isMute: Boolean)",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.mutedVideo"
+    ]
+  },
+  {
+    "name": "abstract fun onConfigChanged()",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.onConfigChanged",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/on-config-changed.html",
+    "searchKeys": [
+      "onConfigChanged",
+      "abstract fun onConfigChanged()",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.onConfigChanged"
+    ]
+  },
+  {
+    "name": "abstract fun onValidationFailed(exception: Exception)",
+    "description": "com.blendvision.stream.ingest.core.presentation.callback.ValidationListener.onValidationFailed",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.callback/-validation-listener/on-validation-failed.html",
+    "searchKeys": [
+      "onValidationFailed",
+      "abstract fun onValidationFailed(exception: Exception)",
+      "com.blendvision.stream.ingest.core.presentation.callback.ValidationListener.onValidationFailed"
+    ]
+  },
+  {
+    "name": "abstract fun onValidationSuccess(streamIngest: StreamIngest)",
+    "description": "com.blendvision.stream.ingest.core.presentation.callback.ValidationListener.onValidationSuccess",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.callback/-validation-listener/on-validation-success.html",
+    "searchKeys": [
+      "onValidationSuccess",
+      "abstract fun onValidationSuccess(streamIngest: StreamIngest)",
+      "com.blendvision.stream.ingest.core.presentation.callback.ValidationListener.onValidationSuccess"
+    ]
+  },
+  {
+    "name": "abstract fun registerFilter(filters: List<BeautyFilter>)",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.registerFilter",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/register-filter.html",
+    "searchKeys": [
+      "registerFilter",
+      "abstract fun registerFilter(filters: List<BeautyFilter>)",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.registerFilter"
+    ]
+  },
+  {
+    "name": "abstract fun release()",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.release",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/release.html",
+    "searchKeys": [
+      "release",
+      "abstract fun release()",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.release"
+    ]
+  },
+  {
+    "name": "abstract fun setStreamQuality(streamQuality: StreamQuality)",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.setStreamQuality",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/set-stream-quality.html",
+    "searchKeys": [
+      "setStreamQuality",
+      "abstract fun setStreamQuality(streamQuality: StreamQuality)",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.setStreamQuality"
+    ]
+  },
+  {
+    "name": "abstract fun startCameraPreview()",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.startCameraPreview",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/start-camera-preview.html",
+    "searchKeys": [
+      "startCameraPreview",
+      "abstract fun startCameraPreview()",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.startCameraPreview"
+    ]
+  },
+  {
+    "name": "abstract fun startStream(rtmpUrl: String, streamKey: String)",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.startStream",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/start-stream.html",
+    "searchKeys": [
+      "startStream",
+      "abstract fun startStream(rtmpUrl: String, streamKey: String)",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.startStream"
+    ]
+  },
+  {
+    "name": "abstract fun stopCameraPreview()",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.stopCameraPreview",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/stop-camera-preview.html",
+    "searchKeys": [
+      "stopCameraPreview",
+      "abstract fun stopCameraPreview()",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.stopCameraPreview"
+    ]
+  },
+  {
+    "name": "abstract fun stopStream()",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.stopStream",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/stop-stream.html",
+    "searchKeys": [
+      "stopStream",
+      "abstract fun stopStream()",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.stopStream"
+    ]
+  },
+  {
+    "name": "abstract fun switchCamera()",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.switchCamera",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/switch-camera.html",
+    "searchKeys": [
+      "switchCamera",
+      "abstract fun switchCamera()",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.switchCamera"
+    ]
+  },
+  {
+    "name": "abstract fun unregisterFilter(filters: List<BeautyFilter>)",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.unregisterFilter",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/unregister-filter.html",
+    "searchKeys": [
+      "unregisterFilter",
+      "abstract fun unregisterFilter(filters: List<BeautyFilter>)",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.unregisterFilter"
+    ]
+  },
+  {
+    "name": "abstract val error: Flow<Exception>",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.error",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/error.html",
+    "searchKeys": [
+      "error",
+      "abstract val error: Flow<Exception>",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.error"
+    ]
+  },
+  {
+    "name": "abstract val streamStatus: Flow<StreamState>",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.streamStatus",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/stream-status.html",
+    "searchKeys": [
+      "streamStatus",
+      "abstract val streamStatus: Flow<StreamState>",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.streamStatus"
+    ]
+  },
+  {
+    "name": "class Factory(context: Context, streamConfig: StreamConfig) : StreamIngestFactory",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.Factory",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/-factory/index.html",
+    "searchKeys": [
+      "Factory",
+      "class Factory(context: Context, streamConfig: StreamConfig) : StreamIngestFactory",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.Factory"
+    ]
+  },
+  {
+    "name": "constructor(context: Context, streamConfig: StreamConfig)",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.Factory.Factory",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/-factory/-factory.html",
+    "searchKeys": [
+      "Factory",
+      "constructor(context: Context, streamConfig: StreamConfig)",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.Factory.Factory"
+    ]
+  },
+  {
+    "name": "interface StreamIngest",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/index.html",
+    "searchKeys": [
+      "StreamIngest",
+      "interface StreamIngest",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest"
+    ]
+  },
+  {
+    "name": "interface ValidationListener",
+    "description": "com.blendvision.stream.ingest.core.presentation.callback.ValidationListener",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.callback/-validation-listener/index.html",
+    "searchKeys": [
+      "ValidationListener",
+      "interface ValidationListener",
+      "com.blendvision.stream.ingest.core.presentation.callback.ValidationListener"
+    ]
+  },
+  {
+    "name": "abstract fun onChanged(filter: BeautyFilter)",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.FilterSettingCallback.onChanged",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/-filter-setting-callback/on-changed.html",
+    "searchKeys": [
+      "onChanged",
+      "abstract fun onChanged(filter: BeautyFilter)",
+      "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.FilterSettingCallback.onChanged"
+    ]
+  },
+  {
+    "name": "abstract fun setToDefault()",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.setToDefault",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/set-to-default.html",
+    "searchKeys": [
+      "setToDefault",
+      "abstract fun setToDefault()",
+      "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.setToDefault"
+    ]
+  },
+  {
+    "name": "abstract val audioBitrate: Int",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.audioBitrate",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/audio-bitrate.html",
+    "searchKeys": [
+      "audioBitrate",
+      "abstract val audioBitrate: Int",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.audioBitrate"
+    ]
+  },
+  {
+    "name": "abstract val code: Int",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.code",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/code.html",
+    "searchKeys": [
+      "code",
+      "abstract val code: Int",
+      "com.blendvision.stream.ingest.common.presentation.entity.Exception.code"
+    ]
+  },
+  {
+    "name": "abstract val errorMessage: String",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.errorMessage",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/error-message.html",
+    "searchKeys": [
+      "errorMessage",
+      "abstract val errorMessage: String",
+      "com.blendvision.stream.ingest.common.presentation.entity.Exception.errorMessage"
+    ]
+  },
+  {
+    "name": "abstract val height: Int",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.height",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/height.html",
+    "searchKeys": [
+      "height",
+      "abstract val height: Int",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.height"
+    ]
+  },
+  {
+    "name": "abstract val reason: String",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.reason",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/reason.html",
+    "searchKeys": [
+      "reason",
+      "abstract val reason: String",
+      "com.blendvision.stream.ingest.common.presentation.entity.Exception.reason"
+    ]
+  },
+  {
+    "name": "abstract val videoBitrate: Int",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.videoBitrate",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/video-bitrate.html",
+    "searchKeys": [
+      "videoBitrate",
+      "abstract val videoBitrate: Int",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.videoBitrate"
+    ]
+  },
+  {
+    "name": "abstract val width: Int",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.width",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/width.html",
+    "searchKeys": [
+      "width",
+      "abstract val width: Int",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.width"
+    ]
+  },
+  {
+    "name": "class SkinSmoothFilter : BeautyFilter",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/-skin-smooth-filter/index.html",
+    "searchKeys": [
+      "SkinSmoothFilter",
+      "class SkinSmoothFilter : BeautyFilter",
+      "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter.SkinSmoothFilter",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/-skin-smooth-filter/-skin-smooth-filter.html",
+    "searchKeys": [
+      "SkinSmoothFilter",
+      "constructor()",
+      "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter.SkinSmoothFilter"
+    ]
+  },
+  {
+    "name": "constructor(code: Int, reason: String, errorMessage: String)",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.StreamException",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-stream-exception/-stream-exception.html",
+    "searchKeys": [
+      "StreamException",
+      "constructor(code: Int, reason: String, errorMessage: String)",
+      "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.StreamException"
+    ]
+  },
+  {
+    "name": "constructor(licenseKey: String)",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamConfig.StreamConfig",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-config/-stream-config.html",
+    "searchKeys": [
+      "StreamConfig",
+      "constructor(licenseKey: String)",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamConfig.StreamConfig"
+    ]
+  },
+  {
+    "name": "constructor(view: View)",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamState.INITIALIZED.INITIALIZED",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/-i-n-i-t-i-a-l-i-z-e-d/-i-n-i-t-i-a-l-i-z-e-d.html",
+    "searchKeys": [
+      "INITIALIZED",
+      "constructor(view: View)",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamState.INITIALIZED.INITIALIZED"
+    ]
+  },
+  {
+    "name": "constructor(width: Int = 1280, height: Int = 720, videoBitrate: Int = 1600 * 1024, audioBitrate: Int = 96 * 1024)",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.Medium",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-medium/-medium.html",
+    "searchKeys": [
+      "Medium",
+      "constructor(width: Int = 1280, height: Int = 720, videoBitrate: Int = 1600 * 1024, audioBitrate: Int = 96 * 1024)",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.Medium"
+    ]
+  },
+  {
+    "name": "constructor(width: Int = 1920, height: Int = 1080, videoBitrate: Int = 3200 * 1024, audioBitrate: Int = 128 * 1024)",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.High",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-high/-high.html",
+    "searchKeys": [
+      "High",
+      "constructor(width: Int = 1920, height: Int = 1080, videoBitrate: Int = 3200 * 1024, audioBitrate: Int = 128 * 1024)",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.High"
+    ]
+  },
+  {
+    "name": "constructor(width: Int = 854, height: Int = 480, videoBitrate: Int = 800 * 1024, audioBitrate: Int = 64 * 1024)",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.Low",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-low/-low.html",
+    "searchKeys": [
+      "Low",
+      "constructor(width: Int = 854, height: Int = 480, videoBitrate: Int = 800 * 1024, audioBitrate: Int = 64 * 1024)",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.Low"
+    ]
+  },
+  {
+    "name": "data class High(val width: Int = 1920, val height: Int = 1080, val videoBitrate: Int = 3200 * 1024, val audioBitrate: Int = 128 * 1024) : StreamQuality",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-high/index.html",
+    "searchKeys": [
+      "High",
+      "data class High(val width: Int = 1920, val height: Int = 1080, val videoBitrate: Int = 3200 * 1024, val audioBitrate: Int = 128 * 1024) : StreamQuality",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High"
+    ]
+  },
+  {
+    "name": "data class INITIALIZED(val view: View) : StreamState",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamState.INITIALIZED",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/-i-n-i-t-i-a-l-i-z-e-d/index.html",
+    "searchKeys": [
+      "INITIALIZED",
+      "data class INITIALIZED(val view: View) : StreamState",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamState.INITIALIZED"
+    ]
+  },
+  {
+    "name": "data class Low(val width: Int = 854, val height: Int = 480, val videoBitrate: Int = 800 * 1024, val audioBitrate: Int = 64 * 1024) : StreamQuality",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-low/index.html",
+    "searchKeys": [
+      "Low",
+      "data class Low(val width: Int = 854, val height: Int = 480, val videoBitrate: Int = 800 * 1024, val audioBitrate: Int = 64 * 1024) : StreamQuality",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low"
+    ]
+  },
+  {
+    "name": "data class Medium(val width: Int = 1280, val height: Int = 720, val videoBitrate: Int = 1600 * 1024, val audioBitrate: Int = 96 * 1024) : StreamQuality",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-medium/index.html",
+    "searchKeys": [
+      "Medium",
+      "data class Medium(val width: Int = 1280, val height: Int = 720, val videoBitrate: Int = 1600 * 1024, val audioBitrate: Int = 96 * 1024) : StreamQuality",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium"
+    ]
+  },
+  {
+    "name": "data class StreamConfig(val licenseKey: String)",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamConfig",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-config/index.html",
+    "searchKeys": [
+      "StreamConfig",
+      "data class StreamConfig(val licenseKey: String)",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamConfig"
+    ]
+  },
+  {
+    "name": "data class StreamException(val code: Int, val reason: String, val errorMessage: String) : Exception",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-stream-exception/index.html",
+    "searchKeys": [
+      "StreamException",
+      "data class StreamException(val code: Int, val reason: String, val errorMessage: String) : Exception",
+      "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException"
+    ]
+  },
+  {
+    "name": "data object CONNECT_STARTED : StreamState",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamState.CONNECT_STARTED",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/-c-o-n-n-e-c-t_-s-t-a-r-t-e-d/index.html",
+    "searchKeys": [
+      "CONNECT_STARTED",
+      "data object CONNECT_STARTED : StreamState",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamState.CONNECT_STARTED"
+    ]
+  },
+  {
+    "name": "data object CONNECT_SUCCESS : StreamState",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamState.CONNECT_SUCCESS",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/-c-o-n-n-e-c-t_-s-u-c-c-e-s-s/index.html",
+    "searchKeys": [
+      "CONNECT_SUCCESS",
+      "data object CONNECT_SUCCESS : StreamState",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamState.CONNECT_SUCCESS"
+    ]
+  },
+  {
+    "name": "data object DISCONNECT : StreamState",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamState.DISCONNECT",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/-d-i-s-c-o-n-n-e-c-t/index.html",
+    "searchKeys": [
+      "DISCONNECT",
+      "data object DISCONNECT : StreamState",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamState.DISCONNECT"
+    ]
+  },
+  {
+    "name": "fun getIntensity(): Int",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter.getIntensity",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/-skin-smooth-filter/get-intensity.html",
+    "searchKeys": [
+      "getIntensity",
+      "fun getIntensity(): Int",
+      "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter.getIntensity"
+    ]
+  },
+  {
+    "name": "fun setIntensity(intensity: Int)",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter.setIntensity",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/-skin-smooth-filter/set-intensity.html",
+    "searchKeys": [
+      "setIntensity",
+      "fun setIntensity(intensity: Int)",
+      "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter.setIntensity"
+    ]
+  },
+  {
+    "name": "interface Exception",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/index.html",
+    "searchKeys": [
+      "Exception",
+      "interface Exception",
+      "com.blendvision.stream.ingest.common.presentation.entity.Exception"
+    ]
+  },
+  {
+    "name": "interface FilterSettingCallback",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.FilterSettingCallback",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/-filter-setting-callback/index.html",
+    "searchKeys": [
+      "FilterSettingCallback",
+      "interface FilterSettingCallback",
+      "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.FilterSettingCallback"
+    ]
+  },
+  {
+    "name": "interface StreamQuality",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/index.html",
+    "searchKeys": [
+      "StreamQuality",
+      "interface StreamQuality",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality"
+    ]
+  },
+  {
+    "name": "object Companion",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter.Companion",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/-skin-smooth-filter/-companion/index.html",
+    "searchKeys": [
+      "Companion",
+      "object Companion",
+      "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter.Companion"
+    ]
+  },
+  {
+    "name": "object Companion",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-companion/index.html",
+    "searchKeys": [
+      "Companion",
+      "object Companion",
+      "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion"
+    ]
+  },
+  {
+    "name": "open override fun setToDefault()",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter.setToDefault",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/-skin-smooth-filter/set-to-default.html",
+    "searchKeys": [
+      "setToDefault",
+      "open override fun setToDefault()",
+      "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter.setToDefault"
+    ]
+  },
+  {
+    "name": "open override val audioBitrate: Int",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.audioBitrate",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-high/audio-bitrate.html",
+    "searchKeys": [
+      "audioBitrate",
+      "open override val audioBitrate: Int",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.audioBitrate"
+    ]
+  },
+  {
+    "name": "open override val audioBitrate: Int",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.audioBitrate",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-low/audio-bitrate.html",
+    "searchKeys": [
+      "audioBitrate",
+      "open override val audioBitrate: Int",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.audioBitrate"
+    ]
+  },
+  {
+    "name": "open override val audioBitrate: Int",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.audioBitrate",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-medium/audio-bitrate.html",
+    "searchKeys": [
+      "audioBitrate",
+      "open override val audioBitrate: Int",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.audioBitrate"
+    ]
+  },
+  {
+    "name": "open override val code: Int",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.code",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-stream-exception/code.html",
+    "searchKeys": [
+      "code",
+      "open override val code: Int",
+      "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.code"
+    ]
+  },
+  {
+    "name": "open override val errorMessage: String",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.errorMessage",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-stream-exception/error-message.html",
+    "searchKeys": [
+      "errorMessage",
+      "open override val errorMessage: String",
+      "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.errorMessage"
+    ]
+  },
+  {
+    "name": "open override val height: Int = 1080",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.height",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-high/height.html",
+    "searchKeys": [
+      "height",
+      "open override val height: Int = 1080",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.height"
+    ]
+  },
+  {
+    "name": "open override val height: Int = 480",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.height",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-low/height.html",
+    "searchKeys": [
+      "height",
+      "open override val height: Int = 480",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.height"
+    ]
+  },
+  {
+    "name": "open override val height: Int = 720",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.height",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-medium/height.html",
+    "searchKeys": [
+      "height",
+      "open override val height: Int = 720",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.height"
+    ]
+  },
+  {
+    "name": "open override val reason: String",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.reason",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-stream-exception/reason.html",
+    "searchKeys": [
+      "reason",
+      "open override val reason: String",
+      "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.reason"
+    ]
+  },
+  {
+    "name": "open override val videoBitrate: Int",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.videoBitrate",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-high/video-bitrate.html",
+    "searchKeys": [
+      "videoBitrate",
+      "open override val videoBitrate: Int",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.videoBitrate"
+    ]
+  },
+  {
+    "name": "open override val videoBitrate: Int",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.videoBitrate",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-low/video-bitrate.html",
+    "searchKeys": [
+      "videoBitrate",
+      "open override val videoBitrate: Int",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.videoBitrate"
+    ]
+  },
+  {
+    "name": "open override val videoBitrate: Int",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.videoBitrate",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-medium/video-bitrate.html",
+    "searchKeys": [
+      "videoBitrate",
+      "open override val videoBitrate: Int",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.videoBitrate"
+    ]
+  },
+  {
+    "name": "open override val width: Int = 1280",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.width",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-medium/width.html",
+    "searchKeys": [
+      "width",
+      "open override val width: Int = 1280",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.width"
+    ]
+  },
+  {
+    "name": "open override val width: Int = 1920",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.width",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-high/width.html",
+    "searchKeys": [
+      "width",
+      "open override val width: Int = 1920",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High.width"
+    ]
+  },
+  {
+    "name": "open override val width: Int = 854",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.width",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-low/width.html",
+    "searchKeys": [
+      "width",
+      "open override val width: Int = 854",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Low.width"
+    ]
+  },
+  {
+    "name": "sealed class BeautyFilter",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/index.html",
+    "searchKeys": [
+      "BeautyFilter",
+      "sealed class BeautyFilter",
+      "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter"
+    ]
+  },
+  {
+    "name": "sealed class StreamState",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamState",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/index.html",
+    "searchKeys": [
+      "StreamState",
+      "sealed class StreamState",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamState"
+    ]
+  },
+  {
+    "name": "val ERROR_REASON_CONNECTION_FAILED: Pair<Int, String>",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_CONNECTION_FAILED",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-companion/-e-r-r-o-r_-r-e-a-s-o-n_-c-o-n-n-e-c-t-i-o-n_-f-a-i-l-e-d.html",
+    "searchKeys": [
+      "ERROR_REASON_CONNECTION_FAILED",
+      "val ERROR_REASON_CONNECTION_FAILED: Pair<Int, String>",
+      "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_CONNECTION_FAILED"
+    ]
+  },
+  {
+    "name": "val ERROR_REASON_ENCODER: Pair<Int, String>",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_ENCODER",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-companion/-e-r-r-o-r_-r-e-a-s-o-n_-e-n-c-o-d-e-r.html",
+    "searchKeys": [
+      "ERROR_REASON_ENCODER",
+      "val ERROR_REASON_ENCODER: Pair<Int, String>",
+      "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_ENCODER"
+    ]
+  },
+  {
+    "name": "val ERROR_REASON_LICENSE_FAILED: Pair<Int, String>",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_LICENSE_FAILED",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-companion/-e-r-r-o-r_-r-e-a-s-o-n_-l-i-c-e-n-s-e_-f-a-i-l-e-d.html",
+    "searchKeys": [
+      "ERROR_REASON_LICENSE_FAILED",
+      "val ERROR_REASON_LICENSE_FAILED: Pair<Int, String>",
+      "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_LICENSE_FAILED"
+    ]
+  },
+  {
+    "name": "val ERROR_REASON_UNKNOWN: Pair<Int, String>",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_UNKNOWN",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-companion/-e-r-r-o-r_-r-e-a-s-o-n_-u-n-k-n-o-w-n.html",
+    "searchKeys": [
+      "ERROR_REASON_UNKNOWN",
+      "val ERROR_REASON_UNKNOWN: Pair<Int, String>",
+      "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_UNKNOWN"
+    ]
+  },
+  {
+    "name": "val licenseKey: String",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamConfig.licenseKey",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-config/license-key.html",
+    "searchKeys": [
+      "licenseKey",
+      "val licenseKey: String",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamConfig.licenseKey"
+    ]
+  },
+  {
+    "name": "val view: View",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamState.INITIALIZED.view",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/-i-n-i-t-i-a-l-i-z-e-d/view.html",
+    "searchKeys": [
+      "view",
+      "val view: View",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamState.INITIALIZED.view"
+    ]
+  },
+  {
+    "name": "var notifySetting: BeautyFilter.FilterSettingCallback?",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.notifySetting",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/notify-setting.html",
+    "searchKeys": [
+      "notifySetting",
+      "var notifySetting: BeautyFilter.FilterSettingCallback?",
+      "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.notifySetting"
+    ]
+  },
+  {
+    "name": "class StreamIngestView constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) : FrameLayout",
+    "description": "com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView",
+    "location": "ui/com.blendvision.stream.ingest.ui.presentation.view/-stream-ingest-view/index.html",
+    "searchKeys": [
+      "StreamIngestView",
+      "class StreamIngestView constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) : FrameLayout",
+      "com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView"
+    ]
+  },
+  {
+    "name": "constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0)",
+    "description": "com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView.StreamIngestView",
+    "location": "ui/com.blendvision.stream.ingest.ui.presentation.view/-stream-ingest-view/-stream-ingest-view.html",
+    "searchKeys": [
+      "StreamIngestView",
+      "constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0)",
+      "com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView.StreamIngestView"
+    ]
+  },
+  {
+    "name": "object Companion",
+    "description": "com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView.Companion",
+    "location": "ui/com.blendvision.stream.ingest.ui.presentation.view/-stream-ingest-view/-companion/index.html",
+    "searchKeys": [
+      "Companion",
+      "object Companion",
+      "com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView.Companion"
+    ]
+  },
+  {
+    "name": "var streamIngest: StreamIngest?",
+    "description": "com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView.streamIngest",
+    "location": "ui/com.blendvision.stream.ingest.ui.presentation.view/-stream-ingest-view/stream-ingest.html",
+    "searchKeys": [
+      "streamIngest",
+      "var streamIngest: StreamIngest?",
+      "com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView.streamIngest"
+    ]
+  }
+]
