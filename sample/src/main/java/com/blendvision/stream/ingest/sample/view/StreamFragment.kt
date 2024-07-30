@@ -142,7 +142,7 @@ class StreamFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
     }
 
     override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-        streamViewModel.smoothFilter.intensity = progress
+        streamViewModel.smoothFilter.setIntensity(progress)
     }
 
     override fun onStartTrackingTouch(seekBar: SeekBar?) = Unit

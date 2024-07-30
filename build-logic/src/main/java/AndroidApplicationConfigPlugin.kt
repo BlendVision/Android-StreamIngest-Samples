@@ -40,7 +40,7 @@ class AndroidApplicationConfigPlugin : Plugin<Project> {
                     signingConfig = signingConfigs.getByName("debug")
                 }
                 getByName("release") {
-                    isMinifyEnabled = false
+                    isMinifyEnabled = true
                     signingConfig = signingConfigs.getByName("debug")
                 }
             }

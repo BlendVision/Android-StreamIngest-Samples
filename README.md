@@ -37,7 +37,7 @@ dependencyResolutionManagement {
 
 ```groovy
 dependencies {
-    implementation 'com.blendvision.stream.ingest:streamingest:2.0.2'
+    implementation 'com.blendvision.stream.ingest:streamingest:2.0.3'
 }
 ```
 
@@ -100,10 +100,18 @@ override fun onCreate(savedInstanceState: Bundle?) {
 private fun setupStreamIngestView(streamIngest: StreamIngest) {
     observeStreamStatus(streamIngest)
     streamIngest.setStreamQuality(StreamQuality.High())
-    val filters = listOf(BeautyFilter.SkinSmoothFilter())
+    registerFilter(streamIngest)
+    streamIngestView.streamIngest = streamIngest
+}
+
+private fun registerFilter(streamIngest: StreamIngest){
+    //set skin Smooth Filter intensity value between 0-100,and it also can be changed during streaming
+    val skinSmoothFilter = BeautyFilter.SkinSmoothFilter()
+    skinSmoothFilter.setIntensity(50)
+    //register filter
+    val filters = listOf(skinSmoothFilter)
     //if you want to unregister filter call below: `streamIngest.unregisterFilter(filters)`
     streamIngest.registerFilter(filters)
-    streamIngestView.streamIngest = streamIngest
 }
 
 private fun observeStreamStatus(streamIngest: StreamIngest) {
@@ -111,6 +119,7 @@ private fun observeStreamStatus(streamIngest: StreamIngest) {
         when (streamState) {
             StreamState.INITIALIZED -> {
                 //initialized.
+                //Starts streaming before,please ensure streamIngest has been initialized and prepared.
             }
 
             StreamState.CONNECT_STARTED -> {
@@ -189,18 +198,6 @@ streamIngest.mutedVideo(isMute: Boolean)
  * @param isMute True to mute the audio, false to unmute.
  */
 streamIngest.mutedAudio(isMute: Boolean)
-
-/**
- * Initiates the streaming process with the provided RTMP URL.
- *
- * @param rtmpUrl The RTMP URL for streaming.
- */
-streamIngest.startStream(rtmpUrl: String)
-
-/**
- * Stops the ongoing streaming process.
- */
-streamIngest.stopStream()
 
 /**
  * Starts the camera preview for the ongoing streaming process.
