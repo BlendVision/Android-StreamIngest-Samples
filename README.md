@@ -37,7 +37,7 @@ dependencyResolutionManagement {
 
 ```groovy
 dependencies {
-    implementation 'com.blendvision.stream.ingest:streamingest:2.0.3'
+    implementation 'com.blendvision.stream.ingest:streamingest:$latest_version'
 }
 ```
 
@@ -118,26 +118,41 @@ private fun observeStreamStatus(streamIngest: StreamIngest) {
     streamIngest.streamStatus.onEach { streamState ->
         when (streamState) {
             StreamState.INITIALIZED -> {
-                //initialized.
-                //Starts streaming before,please ensure streamIngest has been initialized and prepared.
+                //streamingest view has been initialized
             }
 
-            StreamState.CONNECT_STARTED -> {
-                //connect stared.
+            StreamState.RTMP_SERVER_IS_CONNECTING -> {
+                //connecting to rtmp server
             }
 
-            StreamState.CONNECT_SUCCESS -> {
+            StreamState.RTMP_SERVER_IS_CONNECT_SUCCESS -> {
                 //connect success
             }
 
-            StreamState.DISCONNECT -> {
+            StreamState.RTMP_SERVER_IS_DISCONNECT -> {
                 //disconnect
             }
         }
     }.launchIn(lifecycleScope)
 
-    streamIngest.error.onEach { error ->
-        //error.message
+    streamIngest.error.onEach { streamIngestException ->
+        when (streamIngestException) {
+            is StreamIngestException.ConnectionFailed -> {
+                //connection failed
+            }
+            is StreamIngestException.EncoderFailed -> {
+                //encoder failed
+            }
+            is StreamIngestException.LicenseFailed -> {
+                //license failed
+            }
+            is StreamIngestException.RtmpServerFailed -> {
+                //rtmp server failed
+            }
+            is StreamIngestException.Unknown -> {
+                //unknown error
+            }
+        }
     }.launchIn(lifecycleScope)
 }
 
@@ -175,6 +190,7 @@ override fun onDestroy() {
 
 /**
  * Set the stream quality for the ongoing streaming process.
+ * Make sure this setting must be called before [StreamIngest] object assign to the view.
  *
  * @param streamQuality The desired quality for the streaming process.
  */
@@ -200,6 +216,19 @@ streamIngest.mutedVideo(isMute: Boolean)
 streamIngest.mutedAudio(isMute: Boolean)
 
 /**
+ * Starts the streaming process with the provided RTMP URL.
+ *
+ * @param rtmpUrl The RTMP URL to start the streaming process.
+ * @param streamKey The stream key to start the streaming process.
+ */
+streamIngest.startStream(rtmpUrl: String, streamKey: String)
+
+/**
+ * Stops the ongoing streaming process.
+ */
+streamIngest.stopStream()
+
+/**
  * Starts the camera preview for the ongoing streaming process.
  */
 streamIngest.startCameraPreview()
@@ -212,21 +241,51 @@ streamIngest.stopCameraPreview()
 /**
  * Register a list of beauty filters.
  *
- * @param beautyFilters The list of beauty filters to register.
+ * @param filters The list of beauty filters to register.
+ * @return True if the filters are registered successfully, false otherwise.
  */
-streamIngest.registerFilter(beautyFilters: List< BeautyFilter >)
+streamIngest.registerFilter(filters: List< BeautyFilter >):Boolean
 
 /**
  * Unregister a list of beauty filters.
  *
- * @param beautyFilters The list of beauty filters to unregister.
+ * @param filters The list of beauty filters to unregister.
  */
-streamIngest.unregisterFilter(beautyFilters: List< BeautyFilter >)
+streamIngest.unregisterFilter(filters: List< BeautyFilter >)
 
 /**
  * Called when the configuration of the view changes.
  */
 streamIngest.onConfigChanged()
+
+/**
+ * Sets the number of retries and the interval between retries for the streaming process.
+ *
+ * @param retries The number of retries.
+ * @param retryInterval The interval between retries in milliseconds.
+ */
+streamIngest.setRetries(retries: Int, retryInterval: Long)
+
+/**
+ * Checks if the RTMP streaming process is ongoing.
+ *
+ * @return True if the RTMP streaming process is ongoing, false otherwise.
+ */
+streamIngest.isStreaming(): Boolean
+
+/**
+ * Enable or disable the skin smooth feature.
+ *
+ * @param isEnable True to enable the skin smooth feature, false to disable.
+ */
+streamIngest.enableSkinSmoothFaceOnly(isEnable: Boolean)
+
+/**
+ * Sets the preview scale type for the camera preview.
+ *
+ * @param previewScaleType The desired scale type for the camera preview.
+ */
+streamIngest.setPreviewScaleType(previewScaleType: PreviewScaleType)
 
 /**
  * Releases resources associated with the streaming process.
