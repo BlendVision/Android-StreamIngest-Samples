@@ -15,6 +15,7 @@ import com.blendvision.stream.ingest.common.presentation.entity.StreamState
 import com.blendvision.stream.ingest.core.presentation.factory.StreamIngest
 import com.blendvision.stream.ingest.sample.databinding.FragmentStreamBinding
 import com.blendvision.stream.ingest.sample.viewmodel.StreamViewModel
+import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
@@ -24,6 +25,8 @@ class StreamFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
     private val binding get() = _binding!!
 
     private val streamViewModel: StreamViewModel by viewModels()
+
+    private var streamIngest: StreamIngest? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,18 +44,21 @@ class StreamFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
     }
 
     private fun initViewModelObservers() {
-        streamViewModel.onValidationSuccess.observe(viewLifecycleOwner) { streamIngest ->
+        streamViewModel.onValidationSuccess.filterNotNull().onEach { streamIngest ->
             setupStreamIngestView(streamIngest)
-        }
-        streamViewModel.onValidationFailed.observe(viewLifecycleOwner) { exception ->
-            showMessage(exception.errorMessage)
-        }
-        streamViewModel.elapsedTime.observe(viewLifecycleOwner) { seconds ->
+        }.launchIn(lifecycleScope)
+
+        streamViewModel.onValidationFailed.filterNotNull().onEach { streamIngestException ->
+            showMessage(streamIngestException.errorMessage)
+        }.launchIn(lifecycleScope)
+
+        streamViewModel.elapsedTime.filterNotNull().onEach { seconds ->
             binding.timeLabel.text = "$seconds 秒"
-        }
+        }.launchIn(lifecycleScope)
     }
 
     private fun setupStreamIngestView(streamIngest: StreamIngest) {
+        this.streamIngest = streamIngest
         setOnClickListeners(streamIngest)
         observeStreamStatus(streamIngest)
         initQuality(streamIngest)
@@ -97,19 +103,19 @@ class StreamFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
                     binding.progressBar.visibility = View.GONE
                 }
 
-                is StreamState.CONNECT_STARTED -> showMessage("CONNECT STARTED.")
-                is StreamState.CONNECT_SUCCESS -> showMessage("CONNECT SUCCESS.")
-                is StreamState.DISCONNECT -> {
-                    showMessage("DISCONNECT.")
-                    streamViewModel.stopTimer()
+                is StreamState.RTMP_SERVER_IS_CONNECTING -> showMessage("CONNECTING...")
+                is StreamState.RTMP_SERVER_IS_CONNECT_SUCCESS -> showMessage("CONNECT SUCCESS.")
+                is StreamState.RTMP_SERVER_IS_DISCONNECT -> {
+                    showMessage("DISCONNECTED.")
+                    binding.playOrPauseButton.performClick()
                 }
 
                 else -> Unit
             }
         }.launchIn(lifecycleScope)
 
-        streamIngest.error.onEach { exception ->
-            showMessage(exception.errorMessage)
+        streamIngest.error.onEach { streamIngestException ->
+            showMessage(streamIngestException.errorMessage)
             streamViewModel.stopTimer()
         }.launchIn(lifecycleScope)
     }
@@ -147,6 +153,7 @@ class StreamFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
 
     override fun onStartTrackingTouch(seekBar: SeekBar?) = Unit
     override fun onStopTrackingTouch(seekBar: SeekBar?) = Unit
+
 
     companion object {
         const val QUALITY_KEY = "QUALITY_KEY"
