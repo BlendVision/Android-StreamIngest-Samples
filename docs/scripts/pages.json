@@ -1,5 +1,25 @@
 [
   {
+    "name": "abstract fun enableSkinSmoothFaceOnly(isEnable: Boolean)",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.enableSkinSmoothFaceOnly",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/enable-skin-smooth-face-only.html",
+    "searchKeys": [
+      "enableSkinSmoothFaceOnly",
+      "abstract fun enableSkinSmoothFaceOnly(isEnable: Boolean)",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.enableSkinSmoothFaceOnly"
+    ]
+  },
+  {
+    "name": "abstract fun isStreaming(): Boolean",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.isStreaming",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/is-streaming.html",
+    "searchKeys": [
+      "isStreaming",
+      "abstract fun isStreaming(): Boolean",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.isStreaming"
+    ]
+  },
+  {
     "name": "abstract fun mutedAudio(isMute: Boolean)",
     "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.mutedAudio",
     "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/muted-audio.html",
@@ -30,12 +50,12 @@
     ]
   },
   {
-    "name": "abstract fun onValidationFailed(exception: Exception)",
+    "name": "abstract fun onValidationFailed(streamIngestException: StreamIngestException)",
     "description": "com.blendvision.stream.ingest.core.presentation.callback.ValidationListener.onValidationFailed",
     "location": "core/com.blendvision.stream.ingest.core.presentation.callback/-validation-listener/on-validation-failed.html",
     "searchKeys": [
       "onValidationFailed",
-      "abstract fun onValidationFailed(exception: Exception)",
+      "abstract fun onValidationFailed(streamIngestException: StreamIngestException)",
       "com.blendvision.stream.ingest.core.presentation.callback.ValidationListener.onValidationFailed"
     ]
   },
@@ -50,12 +70,12 @@
     ]
   },
   {
-    "name": "abstract fun registerFilter(filters: List<BeautyFilter>)",
+    "name": "abstract fun registerFilter(filters: List<BeautyFilter>): Boolean",
     "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.registerFilter",
     "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/register-filter.html",
     "searchKeys": [
       "registerFilter",
-      "abstract fun registerFilter(filters: List<BeautyFilter>)",
+      "abstract fun registerFilter(filters: List<BeautyFilter>): Boolean",
       "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.registerFilter"
     ]
   },
@@ -67,6 +87,26 @@
       "release",
       "abstract fun release()",
       "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.release"
+    ]
+  },
+  {
+    "name": "abstract fun setPreviewScaleType(previewScaleType: PreviewScaleType)",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.setPreviewScaleType",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/set-preview-scale-type.html",
+    "searchKeys": [
+      "setPreviewScaleType",
+      "abstract fun setPreviewScaleType(previewScaleType: PreviewScaleType)",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.setPreviewScaleType"
+    ]
+  },
+  {
+    "name": "abstract fun setRetries(retries: Int, retryInterval: Long)",
+    "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.setRetries",
+    "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/set-retries.html",
+    "searchKeys": [
+      "setRetries",
+      "abstract fun setRetries(retries: Int, retryInterval: Long)",
+      "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.setRetries"
     ]
   },
   {
@@ -140,12 +180,12 @@
     ]
   },
   {
-    "name": "abstract val error: Flow<Exception>",
+    "name": "abstract val error: Flow<StreamIngestException>",
     "description": "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.error",
     "location": "core/com.blendvision.stream.ingest.core.presentation.factory/-stream-ingest/error.html",
     "searchKeys": [
       "error",
-      "abstract val error: Flow<Exception>",
+      "abstract val error: Flow<StreamIngestException>",
       "com.blendvision.stream.ingest.core.presentation.factory.StreamIngest.error"
     ]
   },
@@ -231,22 +271,22 @@
   },
   {
     "name": "abstract val code: Int",
-    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.code",
-    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/code.html",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.code",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/code.html",
     "searchKeys": [
       "code",
       "abstract val code: Int",
-      "com.blendvision.stream.ingest.common.presentation.entity.Exception.code"
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.code"
     ]
   },
   {
     "name": "abstract val errorMessage: String",
-    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.errorMessage",
-    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/error-message.html",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.errorMessage",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/error-message.html",
     "searchKeys": [
       "errorMessage",
       "abstract val errorMessage: String",
-      "com.blendvision.stream.ingest.common.presentation.entity.Exception.errorMessage"
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.errorMessage"
     ]
   },
   {
@@ -257,16 +297,6 @@
       "height",
       "abstract val height: Int",
       "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.height"
-    ]
-  },
-  {
-    "name": "abstract val reason: String",
-    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.reason",
-    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/reason.html",
-    "searchKeys": [
-      "reason",
-      "abstract val reason: String",
-      "com.blendvision.stream.ingest.common.presentation.entity.Exception.reason"
     ]
   },
   {
@@ -310,13 +340,53 @@
     ]
   },
   {
-    "name": "constructor(code: Int, reason: String, errorMessage: String)",
-    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.StreamException",
-    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-stream-exception/-stream-exception.html",
+    "name": "constructor(code: Int = 100, errorMessage: String = \"Connection failed\")",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.ConnectionFailed.ConnectionFailed",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-connection-failed/-connection-failed.html",
     "searchKeys": [
-      "StreamException",
-      "constructor(code: Int, reason: String, errorMessage: String)",
-      "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.StreamException"
+      "ConnectionFailed",
+      "constructor(code: Int = 100, errorMessage: String = \"Connection failed\")",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.ConnectionFailed.ConnectionFailed"
+    ]
+  },
+  {
+    "name": "constructor(code: Int = 101, errorMessage: String = \"License failed\")",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.LicenseFailed.LicenseFailed",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-license-failed/-license-failed.html",
+    "searchKeys": [
+      "LicenseFailed",
+      "constructor(code: Int = 101, errorMessage: String = \"License failed\")",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.LicenseFailed.LicenseFailed"
+    ]
+  },
+  {
+    "name": "constructor(code: Int = 102, errorMessage: String = \"Encoder failed\")",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.EncoderFailed.EncoderFailed",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-encoder-failed/-encoder-failed.html",
+    "searchKeys": [
+      "EncoderFailed",
+      "constructor(code: Int = 102, errorMessage: String = \"Encoder failed\")",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.EncoderFailed.EncoderFailed"
+    ]
+  },
+  {
+    "name": "constructor(code: Int = 103, errorMessage: String = \"Rtmp server failed, please check the rtmp server is alive or rtmp url is correct.\")",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.RtmpServerFailed.RtmpServerFailed",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-rtmp-server-failed/-rtmp-server-failed.html",
+    "searchKeys": [
+      "RtmpServerFailed",
+      "constructor(code: Int = 103, errorMessage: String = \"Rtmp server failed, please check the rtmp server is alive or rtmp url is correct.\")",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.RtmpServerFailed.RtmpServerFailed"
+    ]
+  },
+  {
+    "name": "constructor(code: Int = 9999, errorMessage: String = \"Unknown error\")",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.Unknown.Unknown",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-unknown/-unknown.html",
+    "searchKeys": [
+      "Unknown",
+      "constructor(code: Int = 9999, errorMessage: String = \"Unknown error\")",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.Unknown.Unknown"
     ]
   },
   {
@@ -370,6 +440,26 @@
     ]
   },
   {
+    "name": "data class ConnectionFailed(val code: Int = 100, val errorMessage: String = \"Connection failed\") : StreamIngestException",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.ConnectionFailed",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-connection-failed/index.html",
+    "searchKeys": [
+      "ConnectionFailed",
+      "data class ConnectionFailed(val code: Int = 100, val errorMessage: String = \"Connection failed\") : StreamIngestException",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.ConnectionFailed"
+    ]
+  },
+  {
+    "name": "data class EncoderFailed(val code: Int = 102, val errorMessage: String = \"Encoder failed\") : StreamIngestException",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.EncoderFailed",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-encoder-failed/index.html",
+    "searchKeys": [
+      "EncoderFailed",
+      "data class EncoderFailed(val code: Int = 102, val errorMessage: String = \"Encoder failed\") : StreamIngestException",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.EncoderFailed"
+    ]
+  },
+  {
     "name": "data class High(val width: Int = 1920, val height: Int = 1080, val videoBitrate: Int = 3200 * 1024, val audioBitrate: Int = 128 * 1024) : StreamQuality",
     "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.High",
     "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/-high/index.html",
@@ -387,6 +477,16 @@
       "INITIALIZED",
       "data class INITIALIZED(val view: View) : StreamState",
       "com.blendvision.stream.ingest.common.presentation.entity.StreamState.INITIALIZED"
+    ]
+  },
+  {
+    "name": "data class LicenseFailed(val code: Int = 101, val errorMessage: String = \"License failed\") : StreamIngestException",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.LicenseFailed",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-license-failed/index.html",
+    "searchKeys": [
+      "LicenseFailed",
+      "data class LicenseFailed(val code: Int = 101, val errorMessage: String = \"License failed\") : StreamIngestException",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.LicenseFailed"
     ]
   },
   {
@@ -410,6 +510,16 @@
     ]
   },
   {
+    "name": "data class RtmpServerFailed(val code: Int = 103, val errorMessage: String = \"Rtmp server failed, please check the rtmp server is alive or rtmp url is correct.\") : StreamIngestException",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.RtmpServerFailed",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-rtmp-server-failed/index.html",
+    "searchKeys": [
+      "RtmpServerFailed",
+      "data class RtmpServerFailed(val code: Int = 103, val errorMessage: String = \"Rtmp server failed, please check the rtmp server is alive or rtmp url is correct.\") : StreamIngestException",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.RtmpServerFailed"
+    ]
+  },
+  {
     "name": "data class StreamConfig(val licenseKey: String)",
     "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamConfig",
     "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-config/index.html",
@@ -420,43 +530,63 @@
     ]
   },
   {
-    "name": "data class StreamException(val code: Int, val reason: String, val errorMessage: String) : Exception",
-    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException",
-    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-stream-exception/index.html",
+    "name": "data class Unknown(val code: Int = 9999, val errorMessage: String = \"Unknown error\") : StreamIngestException",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.Unknown",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-unknown/index.html",
     "searchKeys": [
-      "StreamException",
-      "data class StreamException(val code: Int, val reason: String, val errorMessage: String) : Exception",
-      "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException"
+      "Unknown",
+      "data class Unknown(val code: Int = 9999, val errorMessage: String = \"Unknown error\") : StreamIngestException",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.Unknown"
     ]
   },
   {
-    "name": "data object CONNECT_STARTED : StreamState",
-    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamState.CONNECT_STARTED",
-    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/-c-o-n-n-e-c-t_-s-t-a-r-t-e-d/index.html",
+    "name": "data object CENTER_CROP : PreviewScaleType",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.PreviewScaleType.CENTER_CROP",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-preview-scale-type/-c-e-n-t-e-r_-c-r-o-p/index.html",
     "searchKeys": [
-      "CONNECT_STARTED",
-      "data object CONNECT_STARTED : StreamState",
-      "com.blendvision.stream.ingest.common.presentation.entity.StreamState.CONNECT_STARTED"
+      "CENTER_CROP",
+      "data object CENTER_CROP : PreviewScaleType",
+      "com.blendvision.stream.ingest.common.presentation.entity.PreviewScaleType.CENTER_CROP"
     ]
   },
   {
-    "name": "data object CONNECT_SUCCESS : StreamState",
-    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamState.CONNECT_SUCCESS",
-    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/-c-o-n-n-e-c-t_-s-u-c-c-e-s-s/index.html",
+    "name": "data object FIT_CENTER : PreviewScaleType",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.PreviewScaleType.FIT_CENTER",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-preview-scale-type/-f-i-t_-c-e-n-t-e-r/index.html",
     "searchKeys": [
-      "CONNECT_SUCCESS",
-      "data object CONNECT_SUCCESS : StreamState",
-      "com.blendvision.stream.ingest.common.presentation.entity.StreamState.CONNECT_SUCCESS"
+      "FIT_CENTER",
+      "data object FIT_CENTER : PreviewScaleType",
+      "com.blendvision.stream.ingest.common.presentation.entity.PreviewScaleType.FIT_CENTER"
     ]
   },
   {
-    "name": "data object DISCONNECT : StreamState",
-    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamState.DISCONNECT",
-    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/-d-i-s-c-o-n-n-e-c-t/index.html",
+    "name": "data object RTMP_SERVER_IS_CONNECTING : StreamState",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamState.RTMP_SERVER_IS_CONNECTING",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/-r-t-m-p_-s-e-r-v-e-r_-i-s_-c-o-n-n-e-c-t-i-n-g/index.html",
     "searchKeys": [
-      "DISCONNECT",
-      "data object DISCONNECT : StreamState",
-      "com.blendvision.stream.ingest.common.presentation.entity.StreamState.DISCONNECT"
+      "RTMP_SERVER_IS_CONNECTING",
+      "data object RTMP_SERVER_IS_CONNECTING : StreamState",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamState.RTMP_SERVER_IS_CONNECTING"
+    ]
+  },
+  {
+    "name": "data object RTMP_SERVER_IS_CONNECT_SUCCESS : StreamState",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamState.RTMP_SERVER_IS_CONNECT_SUCCESS",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/-r-t-m-p_-s-e-r-v-e-r_-i-s_-c-o-n-n-e-c-t_-s-u-c-c-e-s-s/index.html",
+    "searchKeys": [
+      "RTMP_SERVER_IS_CONNECT_SUCCESS",
+      "data object RTMP_SERVER_IS_CONNECT_SUCCESS : StreamState",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamState.RTMP_SERVER_IS_CONNECT_SUCCESS"
+    ]
+  },
+  {
+    "name": "data object RTMP_SERVER_IS_DISCONNECT : StreamState",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamState.RTMP_SERVER_IS_DISCONNECT",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-state/-r-t-m-p_-s-e-r-v-e-r_-i-s_-d-i-s-c-o-n-n-e-c-t/index.html",
+    "searchKeys": [
+      "RTMP_SERVER_IS_DISCONNECT",
+      "data object RTMP_SERVER_IS_DISCONNECT : StreamState",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamState.RTMP_SERVER_IS_DISCONNECT"
     ]
   },
   {
@@ -480,16 +610,6 @@
     ]
   },
   {
-    "name": "interface Exception",
-    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception",
-    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/index.html",
-    "searchKeys": [
-      "Exception",
-      "interface Exception",
-      "com.blendvision.stream.ingest.common.presentation.entity.Exception"
-    ]
-  },
-  {
     "name": "interface FilterSettingCallback",
     "description": "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.FilterSettingCallback",
     "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/-filter-setting-callback/index.html",
@@ -497,6 +617,26 @@
       "FilterSettingCallback",
       "interface FilterSettingCallback",
       "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.FilterSettingCallback"
+    ]
+  },
+  {
+    "name": "interface PreviewScaleType",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.PreviewScaleType",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-preview-scale-type/index.html",
+    "searchKeys": [
+      "PreviewScaleType",
+      "interface PreviewScaleType",
+      "com.blendvision.stream.ingest.common.presentation.entity.PreviewScaleType"
+    ]
+  },
+  {
+    "name": "interface StreamIngestException",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/index.html",
+    "searchKeys": [
+      "StreamIngestException",
+      "interface StreamIngestException",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException"
     ]
   },
   {
@@ -517,16 +657,6 @@
       "Companion",
       "object Companion",
       "com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter.SkinSmoothFilter.Companion"
-    ]
-  },
-  {
-    "name": "object Companion",
-    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion",
-    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-companion/index.html",
-    "searchKeys": [
-      "Companion",
-      "object Companion",
-      "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion"
     ]
   },
   {
@@ -570,23 +700,103 @@
     ]
   },
   {
-    "name": "open override val code: Int",
-    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.code",
-    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-stream-exception/code.html",
+    "name": "open override val code: Int = 100",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.ConnectionFailed.code",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-connection-failed/code.html",
     "searchKeys": [
       "code",
-      "open override val code: Int",
-      "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.code"
+      "open override val code: Int = 100",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.ConnectionFailed.code"
+    ]
+  },
+  {
+    "name": "open override val code: Int = 101",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.LicenseFailed.code",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-license-failed/code.html",
+    "searchKeys": [
+      "code",
+      "open override val code: Int = 101",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.LicenseFailed.code"
+    ]
+  },
+  {
+    "name": "open override val code: Int = 102",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.EncoderFailed.code",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-encoder-failed/code.html",
+    "searchKeys": [
+      "code",
+      "open override val code: Int = 102",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.EncoderFailed.code"
+    ]
+  },
+  {
+    "name": "open override val code: Int = 103",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.RtmpServerFailed.code",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-rtmp-server-failed/code.html",
+    "searchKeys": [
+      "code",
+      "open override val code: Int = 103",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.RtmpServerFailed.code"
+    ]
+  },
+  {
+    "name": "open override val code: Int = 9999",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.Unknown.code",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-unknown/code.html",
+    "searchKeys": [
+      "code",
+      "open override val code: Int = 9999",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.Unknown.code"
     ]
   },
   {
     "name": "open override val errorMessage: String",
-    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.errorMessage",
-    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-stream-exception/error-message.html",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.ConnectionFailed.errorMessage",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-connection-failed/error-message.html",
     "searchKeys": [
       "errorMessage",
       "open override val errorMessage: String",
-      "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.errorMessage"
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.ConnectionFailed.errorMessage"
+    ]
+  },
+  {
+    "name": "open override val errorMessage: String",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.EncoderFailed.errorMessage",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-encoder-failed/error-message.html",
+    "searchKeys": [
+      "errorMessage",
+      "open override val errorMessage: String",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.EncoderFailed.errorMessage"
+    ]
+  },
+  {
+    "name": "open override val errorMessage: String",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.LicenseFailed.errorMessage",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-license-failed/error-message.html",
+    "searchKeys": [
+      "errorMessage",
+      "open override val errorMessage: String",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.LicenseFailed.errorMessage"
+    ]
+  },
+  {
+    "name": "open override val errorMessage: String",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.RtmpServerFailed.errorMessage",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-rtmp-server-failed/error-message.html",
+    "searchKeys": [
+      "errorMessage",
+      "open override val errorMessage: String",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.RtmpServerFailed.errorMessage"
+    ]
+  },
+  {
+    "name": "open override val errorMessage: String",
+    "description": "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.Unknown.errorMessage",
+    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/-unknown/error-message.html",
+    "searchKeys": [
+      "errorMessage",
+      "open override val errorMessage: String",
+      "com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException.Unknown.errorMessage"
     ]
   },
   {
@@ -617,16 +827,6 @@
       "height",
       "open override val height: Int = 720",
       "com.blendvision.stream.ingest.common.presentation.entity.StreamQuality.Medium.height"
-    ]
-  },
-  {
-    "name": "open override val reason: String",
-    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.reason",
-    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-stream-exception/reason.html",
-    "searchKeys": [
-      "reason",
-      "open override val reason: String",
-      "com.blendvision.stream.ingest.common.presentation.entity.Exception.StreamException.reason"
     ]
   },
   {
@@ -707,46 +907,6 @@
       "StreamState",
       "sealed class StreamState",
       "com.blendvision.stream.ingest.common.presentation.entity.StreamState"
-    ]
-  },
-  {
-    "name": "val ERROR_REASON_CONNECTION_FAILED: Pair<Int, String>",
-    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_CONNECTION_FAILED",
-    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-companion/-e-r-r-o-r_-r-e-a-s-o-n_-c-o-n-n-e-c-t-i-o-n_-f-a-i-l-e-d.html",
-    "searchKeys": [
-      "ERROR_REASON_CONNECTION_FAILED",
-      "val ERROR_REASON_CONNECTION_FAILED: Pair<Int, String>",
-      "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_CONNECTION_FAILED"
-    ]
-  },
-  {
-    "name": "val ERROR_REASON_ENCODER: Pair<Int, String>",
-    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_ENCODER",
-    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-companion/-e-r-r-o-r_-r-e-a-s-o-n_-e-n-c-o-d-e-r.html",
-    "searchKeys": [
-      "ERROR_REASON_ENCODER",
-      "val ERROR_REASON_ENCODER: Pair<Int, String>",
-      "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_ENCODER"
-    ]
-  },
-  {
-    "name": "val ERROR_REASON_LICENSE_FAILED: Pair<Int, String>",
-    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_LICENSE_FAILED",
-    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-companion/-e-r-r-o-r_-r-e-a-s-o-n_-l-i-c-e-n-s-e_-f-a-i-l-e-d.html",
-    "searchKeys": [
-      "ERROR_REASON_LICENSE_FAILED",
-      "val ERROR_REASON_LICENSE_FAILED: Pair<Int, String>",
-      "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_LICENSE_FAILED"
-    ]
-  },
-  {
-    "name": "val ERROR_REASON_UNKNOWN: Pair<Int, String>",
-    "description": "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_UNKNOWN",
-    "location": "common/com.blendvision.stream.ingest.common.presentation.entity/-exception/-companion/-e-r-r-o-r_-r-e-a-s-o-n_-u-n-k-n-o-w-n.html",
-    "searchKeys": [
-      "ERROR_REASON_UNKNOWN",
-      "val ERROR_REASON_UNKNOWN: Pair<Int, String>",
-      "com.blendvision.stream.ingest.common.presentation.entity.Exception.Companion.ERROR_REASON_UNKNOWN"
     ]
   },
   {
