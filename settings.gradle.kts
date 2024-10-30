@@ -22,7 +22,7 @@ dependencyResolutionManagement {
         mavenCentral()
         maven { url = uri("https://jitpack.io") }
         maven {
-            url = uri("https://maven.pkg.github.com/blendvision/Android-StreamIngest-Samples")
+            url = uri("https://maven.pkg.github.com/blendvision/Android-Packages")
             credentials {
                 val properties = getLocalProperties()
                 username = properties.getProperty("github.packages.user")

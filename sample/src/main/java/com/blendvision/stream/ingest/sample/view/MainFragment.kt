@@ -89,6 +89,7 @@ class MainFragment : Fragment() {
             R.id.lowQualityChip -> StreamFragment.Companion.Quality.LOW.name
             R.id.mediumQualityChip -> StreamFragment.Companion.Quality.MEDIUM.name
             R.id.highQualityChip -> StreamFragment.Companion.Quality.HIGH.name
+            R.id.autoQualityChip -> StreamFragment.Companion.Quality.AUTO.name
             else -> StreamFragment.Companion.Quality.LOW.name
         }
 

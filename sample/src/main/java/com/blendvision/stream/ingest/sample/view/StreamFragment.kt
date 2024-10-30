@@ -90,12 +90,20 @@ class StreamFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
                 streamViewModel.stopTimer()
             }
         }
+        binding.streamHorizontalFlipButton.setOnClickListener { view ->
+            view.isActivated = !view.isActivated
+            streamIngest.setIsStreamHorizontalFlip(view.isActivated)
+        }
+        binding.filterButton.setOnClickListener { view ->
+            view.isActivated = !view.isActivated
+            streamIngest.enableSkinSmoothFaceOnly(view.isActivated)
+        }
         binding.smoothFilterBar.setOnSeekBarChangeListener(this)
     }
 
     private fun observeStreamStatus(streamIngest: StreamIngest) {
         streamIngest.streamStatus.onEach { streamState ->
-            Log.e("StreamIngestView_STATE", streamState.toString())
+            Log.i(TAG, "StreamState: $streamState")
             when (streamState) {
                 is StreamState.INITIALIZED -> {
                     showMessage("INITIALIZED.")
@@ -107,7 +115,6 @@ class StreamFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
                 is StreamState.RTMP_SERVER_IS_CONNECT_SUCCESS -> showMessage("CONNECT SUCCESS.")
                 is StreamState.RTMP_SERVER_IS_DISCONNECT -> {
                     showMessage("DISCONNECTED.")
-                    binding.playOrPauseButton.performClick()
                 }
 
                 else -> Unit
@@ -122,12 +129,14 @@ class StreamFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
 
     private fun initQuality(streamIngest: StreamIngest) {
         val quality = when (arguments?.getString(QUALITY_KEY)) {
-            Quality.LOW.name -> StreamQuality.Low()
-            Quality.MEDIUM.name -> StreamQuality.Medium()
-            Quality.HIGH.name -> StreamQuality.High()
-            else -> StreamQuality.Low()
+            Quality.LOW.name -> StreamQuality.Low
+            Quality.MEDIUM.name -> StreamQuality.Medium
+            Quality.HIGH.name -> StreamQuality.High
+            Quality.AUTO.name -> StreamQuality.Auto
+            else -> StreamQuality.Low
         }
         streamIngest.setStreamQuality(quality)
+        Log.i(TAG, "Quality: ${streamIngest.getStreamQuality()}")
     }
 
     private fun initBeautyFilter(streamIngest: StreamIngest) {
@@ -156,11 +165,13 @@ class StreamFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
 
 
     companion object {
+        private val TAG = StreamFragment::class.java.simpleName
         const val QUALITY_KEY = "QUALITY_KEY"
         const val STREAM_KEY = "STREAM_KEY"
         const val RTMP_URL_KEY = "RTMP_URL_KEY"
         const val LICENSE_KEY = "LICENSE_KEY"
 
-        enum class Quality { LOW, MEDIUM, HIGH }
+        enum class Quality { LOW, MEDIUM, HIGH, AUTO }
     }
 }
+
