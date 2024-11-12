@@ -12,9 +12,7 @@ The streamingest SDK is a streaming solution based on the RTMP protocol.
 ## Integration
 
 ### In your settings.gradle file, `dependencyResolutionManagement` sections:
-
 [Gets username and password](https://github.com/BlendVision/Android-StreamIngest-Samples/wiki/Android%E2%80%90StreamIngest%E2%80%90SDK-pull-credentials)
-
 ```kotlin
 dependencyResolutionManagement {
    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -39,7 +37,7 @@ dependencyResolutionManagement {
 
 ```kotlin
 dependencies {
-    implementation("com.blendvision.stream.ingest:streamingest:$latest_version")
+   implementation("com.blendvision.stream.ingest:streamingest:$latest_version")
 }
 ```
 
@@ -155,6 +153,24 @@ private fun observeStreamStatus(streamIngest: StreamIngest) {
             }
         }
     }.launchIn(lifecycleScope)
+
+    streamIngest.streamInsightStatus.onEach { signal ->
+        when (signal) {
+            is StreamInsight.PREPARED -> {
+                //signal is prepared
+            }
+            is StreamInsight.Fine -> {
+                //signal is fine
+            }
+            is StreamInsight.Warning -> {
+                //signal is warning
+            }
+            is StreamInsight.Bad -> {
+                //signal is bad 
+            }
+        }
+    }.launchIn(lifecycleScope)
+    
 }
 
 ```

@@ -125,6 +125,11 @@ class StreamFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
             showMessage(streamIngestException.errorMessage)
             streamViewModel.stopTimer()
         }.launchIn(lifecycleScope)
+
+        streamIngest.streamInsightStatus.onEach { signal ->
+            binding.signalLabel.text = "Signal: $signal"
+        }.launchIn(lifecycleScope)
+
     }
 
     private fun initQuality(streamIngest: StreamIngest) {
