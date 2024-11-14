@@ -8,7 +8,7 @@ constraintlayout = "2.1.4"
 navigation-fragment-ktx = "2.7.7"
 navigation-ui-ktx = "2.7.7"
 lifecycle-runtime-ktx = "2.8.1"
-streamingest = "2.2.0"
+streamingest = "2.3.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
