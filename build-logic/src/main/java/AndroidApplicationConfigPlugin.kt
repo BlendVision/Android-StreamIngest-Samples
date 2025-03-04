@@ -8,7 +8,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 class AndroidApplicationConfigPlugin : Plugin<Project> {
 
     companion object {
-        private const val MAX_API_LEVEL = 34
+        private const val MAX_API_LEVEL = 35
         private const val MIN_API_LEVEL = 24
     }
 
