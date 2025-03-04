@@ -4,10 +4,10 @@ The streamingest SDK is a streaming solution based on the RTMP protocol.
 
 ## Requirements
 
-- **IDE**: Android Studio 3.0 or later
+- **IDE**: Android Studio Ladybug or later
 - **minSdkVersion**: 24
-- **targetSdkVersion**: 34
-- **Kotlin Version**: 1.9.x or later
+- **targetSdkVersion**: 35
+- **Kotlin Version**: 2.0.0 or later
 
 ## Integration
 
