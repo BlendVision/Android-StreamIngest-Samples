@@ -95,6 +95,21 @@
                 app:chipStrokeWidth="1dp"
                 app:textEndPadding="4dp"
                 app:textStartPadding="6dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/autoQualityChip"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="@string/auto_quality"
+                app:chipCornerRadius="16dp"
+                app:chipEndPadding="8dp"
+                app:chipIconSize="20dp"
+                app:chipStartPadding="6dp"
+                app:chipStrokeWidth="1dp"
+                app:textEndPadding="4dp"
+                app:textStartPadding="6dp" />
         </com.google.android.material.chip.ChipGroup>
 
         <com.google.android.material.textfield.TextInputLayout

@@ -13,5 +13,6 @@
     <string name="low_quality">low quality</string>
     <string name="medium_quality">medium quality</string>
     <string name="high_quality">high quality</string>
+    <string name="auto_quality">auto quality</string>
 
 </resources>

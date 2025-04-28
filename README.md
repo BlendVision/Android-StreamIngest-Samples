@@ -4,16 +4,16 @@ The streamingest SDK is a streaming solution based on the RTMP protocol.
 
 ## Requirements
 
-- **IDE**: Android Studio 3.0 or later
+- **IDE**: Android Studio Ladybug or later
 - **minSdkVersion**: 24
-- **targetSdkVersion**: 34
-- **Kotlin Version**: 1.9.x or later
+- **targetSdkVersion**: 35
+- **Kotlin Version**: 2.0.0 or later
 
 ## Integration
 
 ### In your settings.gradle file, `dependencyResolutionManagement` sections:
-
-```groovy
+[Gets username and password](https://github.com/BlendVision/Android-StreamIngest-Samples/wiki/Android%E2%80%90StreamIngest%E2%80%90SDK-pull-credentials)
+```kotlin
 dependencyResolutionManagement {
    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
    repositories {
@@ -22,10 +22,10 @@ dependencyResolutionManagement {
       //-----add below------//
       maven { url = uri("https://jitpack.io") }
       maven {
-         url = uri("https://maven.pkg.github.com/blendvision/Android-StreamIngest-Samples")
+         url = uri("https://maven.pkg.github.com/blendvision/Android-Packages")
          credentials {
-             username = "bv-github-access"
-             password = "ghp_veo1hAnJoT4jv0RY@RzHSCLKMm7UFoD4PoWda" //Please remove "@" character from password
+            username = //TODO
+            password = //TODO
          }
       }
       //------------------//
@@ -35,9 +35,9 @@ dependencyResolutionManagement {
 
 ### Add the dependencies for the Messaging SDK to your module's app-level Gradle file, normally app/build.gradle:
 
-```groovy
+```kotlin
 dependencies {
-    implementation 'com.blendvision.stream.ingest:streamingest:2.0.3'
+   implementation("com.blendvision.stream.ingest:streamingest:$latest_version")
 }
 ```
 
@@ -51,10 +51,10 @@ during screen orientation changes.
 ```xml
 
 <activity android:name=".MainActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true">
-    <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-    </intent-filter>
+   <intent-filter>
+      <action android:name="android.intent.action.MAIN" />
+      <category android:name="android.intent.category.LAUNCHER" />
+   </intent-filter>
 </activity>
 ```
 
@@ -63,11 +63,10 @@ during screen orientation changes.
 This view provides a preview rendering from the camera.
 
 ```xml
-
 <com.blendvision.stream.ingest.ui.presentation.view.StreamIngestView
-   android:id="@+id/streamIngestView"
-   android:layout_width="match_parent"
-   android:layout_height="match_parent"
+    android:id="@+id/streamIngestView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
 />
 ```
 
@@ -99,12 +98,12 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 private fun setupStreamIngestView(streamIngest: StreamIngest) {
     observeStreamStatus(streamIngest)
-    streamIngest.setStreamQuality(StreamQuality.High())
+    streamIngest.setStreamQuality(StreamQuality.High)
     registerFilter(streamIngest)
     streamIngestView.streamIngest = streamIngest
 }
 
-private fun registerFilter(streamIngest: StreamIngest){
+private fun registerFilter(streamIngest: StreamIngest) {
     //set skin Smooth Filter intensity value between 0-100,and it also can be changed during streaming
     val skinSmoothFilter = BeautyFilter.SkinSmoothFilter()
     skinSmoothFilter.setIntensity(50)
@@ -118,32 +117,65 @@ private fun observeStreamStatus(streamIngest: StreamIngest) {
     streamIngest.streamStatus.onEach { streamState ->
         when (streamState) {
             StreamState.INITIALIZED -> {
-                //initialized.
-                //Starts streaming before,please ensure streamIngest has been initialized and prepared.
+                //streamingest view has been initialized
             }
 
-            StreamState.CONNECT_STARTED -> {
-                //connect stared.
+            StreamState.RTMP_SERVER_IS_CONNECTING -> {
+                //connecting to rtmp server
             }
 
-            StreamState.CONNECT_SUCCESS -> {
+            StreamState.RTMP_SERVER_IS_CONNECT_SUCCESS -> {
                 //connect success
             }
 
-            StreamState.DISCONNECT -> {
+            StreamState.RTMP_SERVER_IS_DISCONNECT -> {
                 //disconnect
             }
         }
     }.launchIn(lifecycleScope)
 
-    streamIngest.error.onEach { error ->
-        //error.message
+    streamIngest.error.onEach { streamIngestException ->
+        when (streamIngestException) {
+            is StreamIngestException.ConnectionFailed -> {
+                //connection failed
+            }
+            is StreamIngestException.EncoderFailed -> {
+                //encoder failed
+            }
+            is StreamIngestException.LicenseFailed -> {
+                //license failed
+            }
+            is StreamIngestException.RtmpServerFailed -> {
+                //rtmp server failed
+            }
+            is StreamIngestException.Unknown -> {
+                //unknown error
+            }
+        }
     }.launchIn(lifecycleScope)
+
+    streamIngest.streamInsightStatus.onEach { signal ->
+        when (signal) {
+            is StreamInsight.PREPARED -> {
+                //signal is prepared
+            }
+            is StreamInsight.Fine -> {
+                //signal is fine
+            }
+            is StreamInsight.Warning -> {
+                //signal is warning
+            }
+            is StreamInsight.Bad -> {
+                //signal is bad 
+            }
+        }
+    }.launchIn(lifecycleScope)
+    
 }
 
 ```
 
-Initiates the streaming process with the provided RTMP URL and stream key.  
+Initiates the streaming process with the provided RTMP URL and stream key.
 > Note: Before calling the method, please ensure `streamState` is `StreamState.INITIALIZED`, which means streamIngestView has been initialized and prepared.
 
 ```kotlin
@@ -163,74 +195,10 @@ destroyed.
 
 ```kotlin
 override fun onDestroy() {
-    super.onDestroy()
-    streamIngest.release()
-    streamIngestView.streamIngest = null
+   super.onDestroy()
+   streamIngest.release()
+   streamIngestView.streamIngest = null
 }
 ```
 
-## Others StreamIngestView API
-
-```kotlin
-
-/**
- * Set the stream quality for the ongoing streaming process.
- *
- * @param streamQuality The desired quality for the streaming process.
- */
-streamIngest.setStreamQuality(streamQuality: StreamQuality)
-
-/**
- * Switches the camera for the ongoing streaming process.
- */
-streamIngest.switchCamera()
-
-/**
- * Mutes or unmutes the video stream based on the given flag.
- *
- * @param isMute True to mute the video, false to unmute.
- */
-streamIngest.mutedVideo(isMute: Boolean)
-
-/**
- * Mutes or unmutes the audio stream based on the given flag.
- *
- * @param isMute True to mute the audio, false to unmute.
- */
-streamIngest.mutedAudio(isMute: Boolean)
-
-/**
- * Starts the camera preview for the ongoing streaming process.
- */
-streamIngest.startCameraPreview()
-
-/**
- * Stops the camera preview for the ongoing streaming process.
- */
-streamIngest.stopCameraPreview()
-
-/**
- * Register a list of beauty filters.
- *
- * @param beautyFilters The list of beauty filters to register.
- */
-streamIngest.registerFilter(beautyFilters: List< BeautyFilter >)
-
-/**
- * Unregister a list of beauty filters.
- *
- * @param beautyFilters The list of beauty filters to unregister.
- */
-streamIngest.unregisterFilter(beautyFilters: List< BeautyFilter >)
-
-/**
- * Called when the configuration of the view changes.
- */
-streamIngest.onConfigChanged()
-
-/**
- * Releases resources associated with the streaming process.
- */
-streamIngest.release()
-
-```
+#### If you want to know more about the APIs, please refer to the [APIs docs](https://blendvision.github.io/Android-StreamIngest-Samples/)

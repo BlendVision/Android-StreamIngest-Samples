@@ -39,7 +39,7 @@
             <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
             <div class="library-name">
 <a class="library-name--link" href="../../../index.html">
-                            BlendVision Streamngest SDK
+                            BlendVision StreamIngest SDK
                     </a>            </div>
             <div class="library-version">
             </div>
@@ -79,7 +79,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":streamingest:core:dokkaHtmlPartial/stage"><div class="symbol monospace"><span class="token keyword">class </span><a href="-factory/index.html">Factory</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><span data-unresolved-link="android.content/Context///PointingToDeclaration/">Context</span><span class="token punctuation">, </span></span><span class="parameter ">streamConfig<span class="token operator">: </span><a href="../../../common/com.blendvision.stream.ingest.common.presentation.entity/-stream-config/index.html">StreamConfig</a></span></span><span class="token punctuation">)</span> : <span data-unresolved-link="com.blendvision.stream.ingest.core.data.factory/StreamIngestFactory///PointingToDeclaration/">StreamIngestFactory</span></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":streamingest:core:dokkaHtmlPartial/stage"><div class="symbol monospace"><span class="token keyword">class </span><a href="-factory/index.html">Factory</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">context<span class="token operator">: </span><span data-unresolved-link="android.content/Context///PointingToDeclaration/">Context</span><span class="token punctuation">, </span></span><span class="parameter ">streamConfig<span class="token operator">: </span><a href="../../../common/com.blendvision.stream.ingest.common.presentation.entity/-stream-config/index.html">StreamConfig</a></span></span><span class="token punctuation">)</span> : <span data-unresolved-link="com.blendvision.stream.ingest.core.data.factory/StreamIngestFactory///PointingToDeclaration/">StreamIngestFactory</span></div><div class="brief "><p class="paragraph">A factory class to create the <a href="index.html">StreamIngest</a> object.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -98,7 +98,22 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":streamingest:core:dokkaHtmlPartial/stage"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="error.html">error</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../common/com.blendvision.stream.ingest.common.presentation.entity/-exception/index.html">Exception</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">A flow that emits the error occurred during the streaming process.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":streamingest:core:dokkaHtmlPartial/stage"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="error.html">error</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../common/com.blendvision.stream.ingest.common.presentation.entity/-stream-ingest-exception/index.html">StreamIngestException</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">A flow that emits the error occurred during the streaming process.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1058514006%2FProperties%2F236033415" anchor-label="streamInsightStatus" id="1058514006%2FProperties%2F236033415" data-filterable-set=":streamingest:core:dokkaHtmlPartial/stage"></a>
+          <div class="table-row" data-filterable-current=":streamingest:core:dokkaHtmlPartial/stage" data-filterable-set=":streamingest:core:dokkaHtmlPartial/stage">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="stream-insight-status.html"><span>stream</span><wbr><span>Insight</span><wbr><span><span>Status</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1058514006%2FProperties%2F236033415"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":streamingest:core:dokkaHtmlPartial/stage"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">val </span><a href="stream-insight-status.html">streamInsightStatus</a><span class="token operator">: </span><span data-unresolved-link="kotlinx.coroutines.flow/Flow///PointingToDeclaration/">Flow</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../common/com.blendvision.stream.ingest.common.presentation.entity/-stream-insight/index.html">StreamInsight</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">A flow that emits the stream insight for the ongoing streaming process.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -122,7 +137,52 @@
       </div>
       <div data-togglable="FUNCTION">
         <h2 class="">Functions</h2>
-        <div class="table"><a data-name="-1335829708%2FFunctions%2F236033415" anchor-label="mutedAudio" id="-1335829708%2FFunctions%2F236033415" data-filterable-set=":streamingest:core:dokkaHtmlPartial/stage"></a>
+        <div class="table"><a data-name="-1583533336%2FFunctions%2F236033415" anchor-label="enableSkinSmoothFaceOnly" id="-1583533336%2FFunctions%2F236033415" data-filterable-set=":streamingest:core:dokkaHtmlPartial/stage"></a>
+          <div class="table-row" data-filterable-current=":streamingest:core:dokkaHtmlPartial/stage" data-filterable-set=":streamingest:core:dokkaHtmlPartial/stage">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="enable-skin-smooth-face-only.html"><span>enable</span><wbr><span>Skin</span><wbr><span>Smooth</span><wbr><span>Face</span><wbr><span><span>Only</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1583533336%2FFunctions%2F236033415"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":streamingest:core:dokkaHtmlPartial/stage"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="enable-skin-smooth-face-only.html"><span class="token function">enableSkinSmoothFaceOnly</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">isEnable<span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Enable or disable the skin smooth feature.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1564002737%2FFunctions%2F236033415" anchor-label="getStreamQuality" id="1564002737%2FFunctions%2F236033415" data-filterable-set=":streamingest:core:dokkaHtmlPartial/stage"></a>
+          <div class="table-row" data-filterable-current=":streamingest:core:dokkaHtmlPartial/stage" data-filterable-set=":streamingest:core:dokkaHtmlPartial/stage">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-stream-quality.html"><span>get</span><wbr><span>Stream</span><wbr><span><span>Quality</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1564002737%2FFunctions%2F236033415"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":streamingest:core:dokkaHtmlPartial/stage"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-stream-quality.html"><span class="token function">getStreamQuality</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../../common/com.blendvision.stream.ingest.common.presentation.entity/-stream-quality/index.html">StreamQuality</a></div><div class="brief "><p class="paragraph">Gets the stream quality for the ongoing streaming process.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1058330936%2FFunctions%2F236033415" anchor-label="isStreaming" id="-1058330936%2FFunctions%2F236033415" data-filterable-set=":streamingest:core:dokkaHtmlPartial/stage"></a>
+          <div class="table-row" data-filterable-current=":streamingest:core:dokkaHtmlPartial/stage" data-filterable-set=":streamingest:core:dokkaHtmlPartial/stage">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-streaming.html"><span>is</span><wbr><span><span>Streaming</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1058330936%2FFunctions%2F236033415"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":streamingest:core:dokkaHtmlPartial/stage"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="is-streaming.html"><span class="token function">isStreaming</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span></div><div class="brief "><p class="paragraph">Checks if the RTMP streaming process is ongoing.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1335829708%2FFunctions%2F236033415" anchor-label="mutedAudio" id="-1335829708%2FFunctions%2F236033415" data-filterable-set=":streamingest:core:dokkaHtmlPartial/stage"></a>
           <div class="table-row" data-filterable-current=":streamingest:core:dokkaHtmlPartial/stage" data-filterable-set=":streamingest:core:dokkaHtmlPartial/stage">
             <div class="main-subrow keyValue ">
               <div class=""><span class="inline-flex">
@@ -177,7 +237,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":streamingest:core:dokkaHtmlPartial/stage"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="register-filter.html"><span class="token function">registerFilter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">filters<span class="token operator">: </span><span data-unresolved-link="kotlin.collections/List///PointingToDeclaration/">List</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/index.html">BeautyFilter</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Register a list of beauty filters.</p></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":streamingest:core:dokkaHtmlPartial/stage"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="register-filter.html"><span class="token function">registerFilter</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">filters<span class="token operator">: </span><span data-unresolved-link="kotlin.collections/List///PointingToDeclaration/">List</span><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../../common/com.blendvision.stream.ingest.common.presentation.entity/-beauty-filter/index.html">BeautyFilter</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span></div><div class="brief "><p class="paragraph">Register a list of beauty filters.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -193,6 +253,51 @@
               <div>
                 <div class="title">
                   <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":streamingest:core:dokkaHtmlPartial/stage"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="release.html"><span class="token function">release</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Releases resources associated with the streaming process.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1901864984%2FFunctions%2F236033415" anchor-label="setIsStreamHorizontalFlip" id="-1901864984%2FFunctions%2F236033415" data-filterable-set=":streamingest:core:dokkaHtmlPartial/stage"></a>
+          <div class="table-row" data-filterable-current=":streamingest:core:dokkaHtmlPartial/stage" data-filterable-set=":streamingest:core:dokkaHtmlPartial/stage">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-is-stream-horizontal-flip.html"><span>set</span><wbr><span>Is</span><wbr><span>Stream</span><wbr><span>Horizontal</span><wbr><span><span>Flip</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1901864984%2FFunctions%2F236033415"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":streamingest:core:dokkaHtmlPartial/stage"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-is-stream-horizontal-flip.html"><span class="token function">setIsStreamHorizontalFlip</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">isFlip<span class="token operator">: </span><span data-unresolved-link="kotlin/Boolean///PointingToDeclaration/">Boolean</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Sets the horizontal flip for the RTMP streaming process.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-253505016%2FFunctions%2F236033415" anchor-label="setPreviewScaleType" id="-253505016%2FFunctions%2F236033415" data-filterable-set=":streamingest:core:dokkaHtmlPartial/stage"></a>
+          <div class="table-row" data-filterable-current=":streamingest:core:dokkaHtmlPartial/stage" data-filterable-set=":streamingest:core:dokkaHtmlPartial/stage">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-preview-scale-type.html"><span>set</span><wbr><span>Preview</span><wbr><span>Scale</span><wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-253505016%2FFunctions%2F236033415"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":streamingest:core:dokkaHtmlPartial/stage"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-preview-scale-type.html"><span class="token function">setPreviewScaleType</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">previewScaleType<span class="token operator">: </span><a href="../../../common/com.blendvision.stream.ingest.common.presentation.entity/-preview-scale-type/index.html">PreviewScaleType</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Sets the preview scale type for the camera preview.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1167219310%2FFunctions%2F236033415" anchor-label="setRetries" id="1167219310%2FFunctions%2F236033415" data-filterable-set=":streamingest:core:dokkaHtmlPartial/stage"></a>
+          <div class="table-row" data-filterable-current=":streamingest:core:dokkaHtmlPartial/stage" data-filterable-set=":streamingest:core:dokkaHtmlPartial/stage">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="set-retries.html"><span>set</span><wbr><span><span>Retries</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1167219310%2FFunctions%2F236033415"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":streamingest:core:dokkaHtmlPartial/stage"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="set-retries.html"><span class="token function">setRetries</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">retries<span class="token operator">: </span><span data-unresolved-link="kotlin/Int///PointingToDeclaration/">Int</span><span class="token punctuation">, </span></span><span class="parameter ">retryInterval<span class="token operator">: </span><span data-unresolved-link="kotlin/Long///PointingToDeclaration/">Long</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Sets the number of retries and the interval between retries for the streaming process.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -308,7 +413,7 @@
   </div>
 </div>
       <div class="footer">
-        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2025 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
       </div>
             </div>
         </div>

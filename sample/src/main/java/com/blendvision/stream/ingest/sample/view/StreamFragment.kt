@@ -15,6 +15,7 @@ import com.blendvision.stream.ingest.common.presentation.entity.StreamState
 import com.blendvision.stream.ingest.core.presentation.factory.StreamIngest
 import com.blendvision.stream.ingest.sample.databinding.FragmentStreamBinding
 import com.blendvision.stream.ingest.sample.viewmodel.StreamViewModel
+import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
@@ -24,6 +25,8 @@ class StreamFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
     private val binding get() = _binding!!
 
     private val streamViewModel: StreamViewModel by viewModels()
+
+    private var streamIngest: StreamIngest? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,18 +44,21 @@ class StreamFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
     }
 
     private fun initViewModelObservers() {
-        streamViewModel.onValidationSuccess.observe(viewLifecycleOwner) { streamIngest ->
+        streamViewModel.onValidationSuccess.filterNotNull().onEach { streamIngest ->
             setupStreamIngestView(streamIngest)
-        }
-        streamViewModel.onValidationFailed.observe(viewLifecycleOwner) { exception ->
-            showMessage(exception.errorMessage)
-        }
-        streamViewModel.elapsedTime.observe(viewLifecycleOwner) { seconds ->
+        }.launchIn(lifecycleScope)
+
+        streamViewModel.onValidationFailed.filterNotNull().onEach { streamIngestException ->
+            showMessage(streamIngestException.errorMessage)
+        }.launchIn(lifecycleScope)
+
+        streamViewModel.elapsedTime.filterNotNull().onEach { seconds ->
             binding.timeLabel.text = "$seconds 秒"
-        }
+        }.launchIn(lifecycleScope)
     }
 
     private fun setupStreamIngestView(streamIngest: StreamIngest) {
+        this.streamIngest = streamIngest
         setOnClickListeners(streamIngest)
         observeStreamStatus(streamIngest)
         initQuality(streamIngest)
@@ -84,12 +90,20 @@ class StreamFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
                 streamViewModel.stopTimer()
             }
         }
+        binding.streamHorizontalFlipButton.setOnClickListener { view ->
+            view.isActivated = !view.isActivated
+            streamIngest.setIsStreamHorizontalFlip(view.isActivated)
+        }
+        binding.filterButton.setOnClickListener { view ->
+            view.isActivated = !view.isActivated
+            streamIngest.enableSkinSmoothFaceOnly(view.isActivated)
+        }
         binding.smoothFilterBar.setOnSeekBarChangeListener(this)
     }
 
     private fun observeStreamStatus(streamIngest: StreamIngest) {
         streamIngest.streamStatus.onEach { streamState ->
-            Log.e("StreamIngestView_STATE", streamState.toString())
+            Log.i(TAG, "StreamState: $streamState")
             when (streamState) {
                 is StreamState.INITIALIZED -> {
                     showMessage("INITIALIZED.")
@@ -97,31 +111,37 @@ class StreamFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
                     binding.progressBar.visibility = View.GONE
                 }
 
-                is StreamState.CONNECT_STARTED -> showMessage("CONNECT STARTED.")
-                is StreamState.CONNECT_SUCCESS -> showMessage("CONNECT SUCCESS.")
-                is StreamState.DISCONNECT -> {
-                    showMessage("DISCONNECT.")
-                    streamViewModel.stopTimer()
+                is StreamState.RTMP_SERVER_IS_CONNECTING -> showMessage("CONNECTING...")
+                is StreamState.RTMP_SERVER_IS_CONNECT_SUCCESS -> showMessage("CONNECT SUCCESS.")
+                is StreamState.RTMP_SERVER_IS_DISCONNECT -> {
+                    showMessage("DISCONNECTED.")
                 }
 
                 else -> Unit
             }
         }.launchIn(lifecycleScope)
 
-        streamIngest.error.onEach { exception ->
-            showMessage(exception.errorMessage)
+        streamIngest.error.onEach { streamIngestException ->
+            showMessage(streamIngestException.errorMessage)
             streamViewModel.stopTimer()
         }.launchIn(lifecycleScope)
+
+        streamIngest.streamInsightStatus.onEach { signal ->
+            binding.signalLabel.text = "Signal: $signal"
+        }.launchIn(lifecycleScope)
+
     }
 
     private fun initQuality(streamIngest: StreamIngest) {
         val quality = when (arguments?.getString(QUALITY_KEY)) {
-            Quality.LOW.name -> StreamQuality.Low()
-            Quality.MEDIUM.name -> StreamQuality.Medium()
-            Quality.HIGH.name -> StreamQuality.High()
-            else -> StreamQuality.Low()
+            Quality.LOW.name -> StreamQuality.Low
+            Quality.MEDIUM.name -> StreamQuality.Medium
+            Quality.HIGH.name -> StreamQuality.High
+            Quality.AUTO.name -> StreamQuality.Auto
+            else -> StreamQuality.Low
         }
         streamIngest.setStreamQuality(quality)
+        Log.i(TAG, "Quality: ${streamIngest.getStreamQuality()}")
     }
 
     private fun initBeautyFilter(streamIngest: StreamIngest) {
@@ -148,12 +168,15 @@ class StreamFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
     override fun onStartTrackingTouch(seekBar: SeekBar?) = Unit
     override fun onStopTrackingTouch(seekBar: SeekBar?) = Unit
 
+
     companion object {
+        private val TAG = StreamFragment::class.java.simpleName
         const val QUALITY_KEY = "QUALITY_KEY"
         const val STREAM_KEY = "STREAM_KEY"
         const val RTMP_URL_KEY = "RTMP_URL_KEY"
         const val LICENSE_KEY = "LICENSE_KEY"
 
-        enum class Quality { LOW, MEDIUM, HIGH }
+        enum class Quality { LOW, MEDIUM, HIGH, AUTO }
     }
 }
+
