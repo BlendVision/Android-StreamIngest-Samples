@@ -10,9 +10,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.blendvision.stream.ingest.common.presentation.entity.StreamQuality
-import com.blendvision.stream.ingest.common.presentation.entity.StreamState
-import com.blendvision.stream.ingest.core.presentation.factory.StreamIngest
+import com.blendvision.stream.ingest.common.presentation.model.StreamQuality
+import com.blendvision.stream.ingest.common.presentation.model.StreamState
+import com.blendvision.stream.ingest.core.presentation.StreamIngest
 import com.blendvision.stream.ingest.sample.databinding.FragmentStreamBinding
 import com.blendvision.stream.ingest.sample.viewmodel.StreamViewModel
 import kotlinx.coroutines.flow.filterNotNull
@@ -106,15 +106,18 @@ class StreamFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
             Log.i(TAG, "StreamState: $streamState")
             when (streamState) {
                 is StreamState.INITIALIZED -> {
-                    showMessage("INITIALIZED.")
+                    showMessage("Initialized.")
                     binding.controlPanel.visibility = View.VISIBLE
                     binding.progressBar.visibility = View.GONE
                 }
 
-                is StreamState.RTMP_SERVER_IS_CONNECTING -> showMessage("CONNECTING...")
-                is StreamState.RTMP_SERVER_IS_CONNECT_SUCCESS -> showMessage("CONNECT SUCCESS.")
+                is StreamState.RTMP_SERVER_IS_CONNECTING -> showMessage("Connecting...")
+                is StreamState.RTMP_SERVER_IS_CONNECT_SUCCESS -> showMessage("Connected.")
                 is StreamState.RTMP_SERVER_IS_DISCONNECT -> {
-                    showMessage("DISCONNECTED.")
+                    showMessage("Disconnected.")
+                }
+                is StreamState.VIDEO_ENCODER_AUTO_SWITCHED_TO_SOFTWARE -> {
+                    showMessage("Video encoder switched to software.")
                 }
 
                 else -> Unit
@@ -134,6 +137,7 @@ class StreamFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
 
     private fun initQuality(streamIngest: StreamIngest) {
         val quality = when (arguments?.getString(QUALITY_KEY)) {
+            Quality.ULTRA_LOW.name -> StreamQuality.UltraLow
             Quality.LOW.name -> StreamQuality.Low
             Quality.MEDIUM.name -> StreamQuality.Medium
             Quality.HIGH.name -> StreamQuality.High
@@ -176,7 +180,7 @@ class StreamFragment : Fragment(), SeekBar.OnSeekBarChangeListener {
         const val RTMP_URL_KEY = "RTMP_URL_KEY"
         const val LICENSE_KEY = "LICENSE_KEY"
 
-        enum class Quality { LOW, MEDIUM, HIGH, AUTO }
+        enum class Quality { ULTRA_LOW, LOW, MEDIUM, HIGH, AUTO }
     }
 }
 

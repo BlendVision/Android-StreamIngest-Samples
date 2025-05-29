@@ -86,6 +86,7 @@ class MainFragment : Fragment() {
     private fun goToStreamPage() {
 
         val quality = when (binding.qualityChipGroup.checkedChipId) {
+            R.id.ultraLowQualityChip -> StreamFragment.Companion.Quality.ULTRA_LOW.name
             R.id.lowQualityChip -> StreamFragment.Companion.Quality.LOW.name
             R.id.mediumQualityChip -> StreamFragment.Companion.Quality.MEDIUM.name
             R.id.highQualityChip -> StreamFragment.Companion.Quality.HIGH.name

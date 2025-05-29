@@ -52,6 +52,21 @@
             app:singleSelection="true">
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/ultraLowQualityChip"
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:text="@string/ultra_low_quality"
+                app:chipCornerRadius="16dp"
+                app:chipEndPadding="8dp"
+                app:chipIconSize="20dp"
+                app:chipStartPadding="6dp"
+                app:chipStrokeWidth="1dp"
+                app:textEndPadding="4dp"
+                app:textStartPadding="6dp" />
+
+            <com.google.android.material.chip.Chip
                 android:id="@+id/lowQualityChip"
                 style="@style/Widget.Material3.Chip.Filter"
                 android:layout_width="wrap_content"
