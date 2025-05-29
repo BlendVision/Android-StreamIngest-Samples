@@ -10,6 +10,7 @@
     <string name="welcome_to_streamingest">Are you ready to enjoy streamingest?</string>
     <string name="start_yourself_stream">Start yourself Stream!</string>
 
+    <string name="ultra_low_quality">ultra low quality</string>
     <string name="low_quality">low quality</string>
     <string name="medium_quality">medium quality</string>
     <string name="high_quality">high quality</string>

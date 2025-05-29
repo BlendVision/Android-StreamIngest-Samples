@@ -3,11 +3,11 @@ package com.blendvision.stream.ingest.sample.viewmodel
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.blendvision.stream.ingest.common.presentation.entity.BeautyFilter
-import com.blendvision.stream.ingest.common.presentation.entity.StreamConfig
-import com.blendvision.stream.ingest.common.presentation.entity.StreamIngestException
+import com.blendvision.stream.ingest.common.presentation.model.BeautyFilter
+import com.blendvision.stream.ingest.common.presentation.model.StreamConfig
+import com.blendvision.stream.ingest.common.presentation.model.StreamIngestException
+import com.blendvision.stream.ingest.core.presentation.StreamIngest
 import com.blendvision.stream.ingest.core.presentation.callback.ValidationListener
-import com.blendvision.stream.ingest.core.presentation.factory.StreamIngest
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
