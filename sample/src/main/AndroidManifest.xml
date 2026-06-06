@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Beautify engine minSdk is 32; this app's minSdk is 24. Override is safe:
+         the beautify path is guarded at runtime by Build.VERSION.SDK_INT >= 32. -->
+    <uses-sdk tools:overrideLibrary="com.blendvision.stream.ingest.beautify,com.blendvision.bv_beautify_engine" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
