@@ -3,12 +3,14 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 class AndroidApplicationConfigPlugin : Plugin<Project> {
 
     companion object {
-        private const val MAX_API_LEVEL = 35
+        private const val COMPILE_API_LEVEL = 36
+        private const val TARGET_API_LEVEL = 35
         private const val MIN_API_LEVEL = 24
     }
 
@@ -21,14 +23,14 @@ class AndroidApplicationConfigPlugin : Plugin<Project> {
 
         project.extensions.configure<BaseAppModuleExtension> {
 
-            compileSdk = MAX_API_LEVEL
+            compileSdk = COMPILE_API_LEVEL
 
             buildFeatures.viewBinding = true
             buildFeatures.buildConfig = true
 
             defaultConfig {
                 minSdk = MIN_API_LEVEL
-                targetSdk = MAX_API_LEVEL
+                targetSdk = TARGET_API_LEVEL
                 testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 vectorDrawables.useSupportLibrary = true
             }
@@ -51,8 +53,8 @@ class AndroidApplicationConfigPlugin : Plugin<Project> {
             }
 
             project.tasks.withType(KotlinCompile::class.java).configureEach {
-                kotlinOptions {
-                    jvmTarget = "11"
+                compilerOptions {
+                    jvmTarget.set(JvmTarget.JVM_11)
                 }
             }
 

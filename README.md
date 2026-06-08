@@ -4,10 +4,19 @@ The streamingest SDK is a streaming solution based on the RTMP protocol.
 
 ## Requirements
 
-- **IDE**: Android Studio Ladybug or later
+- **IDE**: Android Studio Meerkat or later
+- **Android Gradle Plugin**: 8.9.1 or later (Gradle 8.11.1 or later) — required to compile against API 36. See the [AGP / API level compatibility table](https://developer.android.com/build/releases/about-agp).
+- **compileSdkVersion**: 36 (the SDK's AAR is marked `minCompileSdk=36`)
 - **minSdkVersion**: 24
 - **targetSdkVersion**: 35
-- **Kotlin Version**: 2.0.0 or later
+- **Kotlin Version**: 2.2.10 or later (the SDK transitively ships `kotlin-stdlib 2.2.x`, whose metadata an older compiler cannot read)
+- **JDK**: 17 or later (required to run AGP 8.9+)
+
+> **Fallback — if you cannot upgrade AGP to 8.9.1:** AGP 8.6–8.8 can still build against `compileSdk 36`, but will print a "compileSdk is not yet supported" warning. To suppress it, add the following to `gradle.properties`:
+> ```properties
+> android.suppressUnsupportedCompileSdk=36
+> ```
+> Upgrading AGP to 8.9.1+ (as above) is preferred, since it supports API 36 natively and needs no flag.
 
 ## Integration
 
@@ -57,6 +66,16 @@ during screen orientation changes.
    </intent-filter>
 </activity>
 ```
+
+> **If your app's `minSdkVersion` is below 32:** the bundled beautify engine declares `minSdk 32`, so manifest merge fails unless you override it. Declare the `tools` namespace on `<manifest>` and add a `<uses-sdk>` override. This is safe — the beautify path is guarded at runtime by `Build.VERSION.SDK_INT >= 32`, and on older devices the SDK automatically falls back to streaming without beautify.
+> ```xml
+> <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+>     xmlns:tools="http://schemas.android.com/tools">
+>
+>     <uses-sdk tools:overrideLibrary="com.blendvision.stream.ingest.beautify,com.blendvision.bv_beautify_engine" />
+>     <!-- ... -->
+> </manifest>
+> ```
 
 ### 2. Integrate `StreamingestView` in Your Layout
 
