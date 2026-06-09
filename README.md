@@ -42,7 +42,7 @@ dependencyResolutionManagement {
 }
 ```
 
-### Add the dependencies for the Messaging SDK to your module's app-level Gradle file, normally app/build.gradle:
+### Add the dependencies for the StreamIngest SDK to your module's app-level Gradle file, normally app/build.gradle:
 
 ```kotlin
 dependencies {
@@ -67,7 +67,7 @@ during screen orientation changes.
 </activity>
 ```
 
-> **If your app's `minSdkVersion` is below 32:** the bundled beautify engine declares `minSdk 32`, so manifest merge fails unless you override it. Declare the `tools` namespace on `<manifest>` and add a `<uses-sdk>` override. This is safe — the beautify path is guarded at runtime by `Build.VERSION.SDK_INT >= 32`, and on older devices the SDK automatically falls back to streaming without beautify.
+> **If your app's `minSdkVersion` is below 30:** the bundled beautify engine declares `minSdk 30`, so manifest merge fails unless you override it. Declare the `tools` namespace on `<manifest>` and add a `<uses-sdk>` override. This is safe — the beautify path is guarded at runtime by `Build.VERSION.SDK_INT >= 30`, and on older devices the SDK automatically falls back to streaming without beautify.
 > ```xml
 > <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 >     xmlns:tools="http://schemas.android.com/tools">
